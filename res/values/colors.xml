@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black_semi_transparent">#b2000000</color>
     <color name="abs__background_holo_dark">#ff000000</color>
     <color name="abs__background_holo_light">#fff3f3f3</color>
     <color name="abs__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
@@ -45,8 +46,8 @@
     <color name="list_item_sub_title">#89000000</color>
     <color name="list_item_title">#dd000000</color>
     <color name="notice_text">#ff517cd3</color>
-    <color name="primary">#ff075e54</color>
-    <color name="primary_dark">#ff054d44</color>
+    <color name="primary">#214545</color>
+    <color name="primary_dark">#1d3838</color>
     <color name="red">#ff8b0000</color>
     <color name="row_1">#fff6f6f6</color>
     <color name="row_2">#ffe5e5e5</color>

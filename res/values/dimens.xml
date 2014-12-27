@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="fab_actions_spacing">16.0dip</dimen>
+    <dimen name="fab_icon_size">24.0dip</dimen>
+    <dimen name="fab_labels_margin">8.0dip</dimen>
+    <dimen name="fab_plus_icon_size">14.0dip</dimen>
+    <dimen name="fab_plus_icon_stroke">2.0dip</dimen>
+    <dimen name="fab_shadow_offset">3.0dip</dimen>
+    <dimen name="fab_shadow_radius">9.0dip</dimen>
+    <dimen name="fab_size_mini">40.0dip</dimen>
+    <dimen name="fab_size_normal">56.0dip</dimen>
+    <dimen name="fab_stroke_width">0.5dip</dimen>
     <dimen name="abs__action_bar_default_height">48.0dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">8.0dip</dimen>
     <dimen name="abs__action_bar_subtitle_bottom_margin">5.0dip</dimen>

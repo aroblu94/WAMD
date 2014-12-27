@@ -268,8 +268,8 @@ If you have both a new phone and a new number, first change your number on your 
     <string name="conversations_most_recent_video">Video</string>
     <string name="conversations_most_recent_voice">Voice note</string>
     <string name="copy">Copy</string>
-    <string name="copyright1">"© 2010-2014 WhatsApp Inc.
-All rights reserved."</string>
+    <string name="copyright1">"© 2010-2015 WhatsApp Inc.
+Modified by /u/Vextil (Joaquin Cuitiño)."</string>
     <string name="corrupt_installation_contact_support_prompt">"If you tried the steps above and you're still seeing this problem, &lt;a href=\"contact-support\">contact support&lt;/a>."</string>
     <string name="corrupt_installation_description">WhatsApp has a problem and it needs to be installed again. Tap on the button below to go to the Play Store, uninstall WhatsApp, and install it again.</string>
     <string name="corrupt_installation_description_website_distribution">WhatsApp has a problem and it needs to be installed again. Tap on the button below to uninstall WhatsApp. Visit &lt;a href=\"%s\">whatsapp.com&lt;/a> afterwards to download and reinstall WhatsApp.</string>
@@ -1221,7 +1221,7 @@ Please try voice verification."</string>
     <string name="verify_voice_enter_code">Enter code</string>
     <string name="verify_voice_header">Voice verification</string>
     <string name="verify_voice_tap_call_first">Please tap ‘%s’ first.</string>
-    <string name="version_prefix">Version</string>
+    <string name="version_prefix">Version (MD 1.4.0-beta)</string>
     <string name="vibrate_length_default">Default</string>
     <string name="vibrate_length_long">Long</string>
     <string name="vibrate_length_off">Off</string>

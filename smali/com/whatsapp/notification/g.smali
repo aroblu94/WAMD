@@ -4419,6 +4419,8 @@
 
     move-object/from16 v0, v23
 
+    const v3, -0xa34395
+
     invoke-virtual {v0, v3}, Landroid/support/v4/app/NotificationCompat$Builder;->setColor(I)Landroid/support/v4/app/NotificationCompat$Builder;
 
     .line 55

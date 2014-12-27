@@ -1781,26 +1781,6 @@
 
     .line 257
     :cond_0
-    const v0, 0x7f0e0241
-
-    invoke-interface {p1, v1, v1, v1, v0}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const v5, 0x7f020500
-
-    invoke-interface {v0, v5}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/16 v5, 0x6e
-
-    .line 114
-    invoke-interface {v0, v5}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    invoke-interface {v0, v7}, Lcom/actionbarsherlock/view/MenuItem;->setShowAsAction(I)V
 
     .line 251
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -1840,123 +1820,6 @@
     .line 228
     :cond_3
     :goto_0
-    if-eqz v0, :cond_4
-
-    .line 139
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const v3, 0x7f0e0241
-
-    :try_start_1
-    invoke-interface {p1, v0, v1, v2, v3}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const v1, 0x7f020544
-
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/16 v1, 0x6e
-
-    .line 39
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setShowAsAction(I)V
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 246
-    :cond_4
-    const/4 v0, 0x0
-
-    const/16 v1, 0xa
-
-    const/4 v2, 0x0
-
-    const v3, 0x7f0e023d
-
-    :try_start_2
-    invoke-interface {p1, v0, v1, v2, v3}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const v1, 0x7f02053c
-
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/16 v1, 0x67
-
-    .line 79
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
-
-    .line 82
-    const/4 v0, 0x0
-
-    const/16 v1, 0x9
-
-    const/4 v2, 0x0
-
-    const v3, 0x7f0e023e
-
-    invoke-interface {p1, v0, v1, v2, v3}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const v1, 0x7f020533
-
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/16 v1, 0x62
-
-    .line 238
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
-
-    .line 104
-    invoke-static {}, Lcom/whatsapp/App;->az()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 161
-    const/4 v0, 0x0
-
-    const/16 v1, 0xb
-
-    const/4 v2, 0x0
-
-    const v3, 0x7f0e0248
-
-    invoke-interface {p1, v0, v1, v2, v3}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const v1, 0x7f020533
-
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
-
-    move-result-object v0
-
-    const/16 v1, 0x71
-
-    .line 80
-    invoke-interface {v0, v1}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 109
     :cond_5
@@ -2345,7 +2208,7 @@
     :pswitch_5
     new-instance v0, Landroid/content/Intent;
     const/4 v4, 0x3
-    const-class v1, Lcom/whatsapp/Vextil/UpdaterActivity;
+    const-class v1, Lninja/vextil/UpdaterActivity;
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
     invoke-virtual {p0, v0, v2}, Lcom/whatsapp/Conversations;->startActivityForResult(Landroid/content/Intent;I)V
 
@@ -3263,7 +3126,7 @@
     return-void
 .end method
 
-.method public fab(Landroid/view/View;)V
+.method public FABChat(Landroid/view/View;)V
     .locals 3
     .prologue
     const/4 v0, 0x0
@@ -3272,5 +3135,24 @@
     const-class v1, Lcom/whatsapp/ContactPicker;
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
     invoke-virtual {p0, v0, v2}, Lcom/whatsapp/Conversations;->startActivityForResult(Landroid/content/Intent;I)V
+    return-void
+.end method
+
+.method public FABGroup(Landroid/view/View;)V
+    .locals 3
+    new-instance v0, Landroid/content/Intent;
+    const-class v1, Lcom/whatsapp/NewGroup;
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversations;->startActivity(Landroid/content/Intent;)V
+    return-void
+.end method
+
+.method public FABBroadcast(Landroid/view/View;)V
+    .locals 3
+    .prologue
+    new-instance v0, Landroid/content/Intent;
+    const-class v1, Lcom/whatsapp/ListMembersSelector;
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversations;->startActivity(Landroid/content/Intent;)V
     return-void
 .end method

@@ -39,8 +39,8 @@
         <item name="actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="icon">@drawable/actionbar_logo</item>
-        <item name="android:colorPrimary">#214545</item>
-        <item name="android:colorPrimaryDark">#1d3838</item>
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">#4db6ac</item>
         <item name="actionBarSize">56dp</item>
         <item name="android:actionBarSize">56dp</item> 

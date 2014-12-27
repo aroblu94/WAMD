@@ -70,6 +70,9 @@
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
     invoke-virtual {p0, v0, v2}, Lcom/whatsapp/Conversations;->startActivityForResult(Landroid/content/Intent;I)V
 
+- Search for "ic_action_compose" red-ID, find it in Conversations.smali, remove everything in :cond_0 until:
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
 - Add actionbBar height in Theme.App in styles.xml (values and values-v11):
     <item name="actionBarSize">56dp</item>
     <item name="android:actionBarSize">56dp</item> 
@@ -109,15 +112,14 @@
 	    <include android:id="@id/conversations_empty_no_contacts" layout="@layout/empty_tell_a_friend" />
 	</LinearLayout>
 
-- Copy conversations_row to layout-v21 folder
+- Copy conversations_row.xml (from same app) to layout-v21 folder
 
-- In conversations_row.xml layout, put FrameLayout (id:contactSelector) inside a Relative layout:
+- In conversations_row.xml (layout), put FrameLayout (id:contactSelector) inside a Relative layout:
     <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
 
 - Add inside that RelativeLayout, on top of the FrameLayout the avatar mask:
     <ImageView android:paddingLeft="@dimen/list_row_padding" android:layout_width="wrap_content" android:layout_height="@dimen/conversations_row_height" android:layout_alignParentLeft="true" android:src="@drawable/vextil_avatar_mask_small_white"/>
 
-- Search for NotificationCompat, find the file inside com/whatsapp/notification with the most uses. Near line 2344 before "setCategory" add:
-    const v3, -0xa34395
-    invoke-virtual {v0, v3}, Landroid/support/v4/app/NotificationCompat$Builder;->setColor(I)Landroid/support/v4/app/NotificationCompat$Builder;
-    const/4 v3, 0x2
+- Copy conversation_actionbar.xml (from previous version) if possible to and from layout and layout-v21. If not check for modifications and add them.
+
+- In com/whatsapp/notification search for "setColor", edit color to: -0xa34395

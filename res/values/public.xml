@@ -139,6 +139,17 @@
     <public type="attr" name="tbtnTextColor" id="0x7f010088" />
     <public type="attr" name="tbtnTextGravity" id="0x7f010089" />
     <public type="attr" name="tbtnBackgroundColor" id="0x7f01008a" />
+    <public type="attr" name="fab_plusIconColor" id="0x7f01008b" />
+    <public type="attr" name="fab_colorPressed" id="0x7f01008c" />
+    <public type="attr" name="fab_colorNormal" id="0x7f01008d" />
+    <public type="attr" name="fab_icon" id="0x7f01008e" />
+    <public type="attr" name="fab_size" id="0x7f01008f" />
+    <public type="attr" name="fab_title" id="0x7f010090" />
+    <public type="attr" name="fab_addButtonColorPressed" id="0x7f010091" />
+    <public type="attr" name="fab_addButtonColorNormal" id="0x7f010092" />
+    <public type="attr" name="fab_addButtonPlusIconColor" id="0x7f010093" />
+    <public type="attr" name="fab_labelStyle" id="0x7f010094" />
+    <public type="attr" name="fab_expandDirection" id="0x7f010095" />
     <public type="drawable" name="widget_preview" id="0x7f020667" />
     <public type="drawable" name="abs__activated_background_holo_dark" id="0x7f020011" />
     <public type="drawable" name="abs__activated_background_holo_light" id="0x7f020012" />
@@ -1779,6 +1790,15 @@
     <public type="drawable" name="undobar_button_focused" id="0x7f02065a" />
     <public type="drawable" name="undobar_button_pressed" id="0x7f02065b" />
     <public type="drawable" name="undobar_divider" id="0x7f02065c" />
+    <public type="drawable" name="fab_label_background" id="0x7f020668" />
+    <public type="drawable" name="fab_bg_mini" id="0x7f020669" />
+    <public type="drawable" name="fab_bg_normal" id="0x7f02066a" />
+    <public type="drawable" name="vextil_updater_done_icon_inner" id="0x7f02066b" />
+    <public type="drawable" name="vextil_updater_download_icon_inner" id="0x7f02066c" />
+    <public type="drawable" name="vextil_updater_icon_outer" id="0x7f02066d" />
+    <public type="drawable" name="vextil_updater_logo_icon" id="0x7f02066e" />
+    <public type="drawable" name="vextil_updater_phone" id="0x7f02066f" />
+    <public type="drawable" name="vextil_updater_refresh_icon_inner" id="0x7f020670" />
     <public type="layout" name="about" id="0x7f030000" />
     <public type="layout" name="abs__action_bar_home" id="0x7f030001" />
     <public type="layout" name="abs__action_bar_tab" id="0x7f030002" />
@@ -1974,6 +1994,7 @@
     <public type="anim" name="slide_in_right" id="0x7f040002" />
     <public type="anim" name="slide_out_left" id="0x7f040003" />
     <public type="anim" name="slide_out_right" id="0x7f040004" />
+    <public type="anim" name="vextil_pulse" id="0x7f040005" />
     <public type="xml" name="account_preferences" id="0x7f050000" />
     <public type="xml" name="authenticator" id="0x7f050001" />
     <public type="xml" name="contacts" id="0x7f050002" />
@@ -2187,6 +2208,16 @@
     <public type="dimen" name="voice_note_avatar_radius" id="0x7f0a0060" />
     <public type="dimen" name="voice_note_avatar_size" id="0x7f0a0061" />
     <public type="dimen" name="action_button_min_width" id="0x7f0a0062" />
+    <public type="dimen" name="fab_actions_spacing" id="0x7f0a0063" />
+    <public type="dimen" name="fab_icon_size" id="0x7f0a0064" />
+    <public type="dimen" name="fab_labels_margin" id="0x7f0a0065" />
+    <public type="dimen" name="fab_plus_icon_size" id="0x7f0a0066" />
+    <public type="dimen" name="fab_plus_icon_stroke" id="0x7f0a0067" />
+    <public type="dimen" name="fab_shadow_offset" id="0x7f0a0068" />
+    <public type="dimen" name="fab_shadow_radius" id="0x7f0a0069" />
+    <public type="dimen" name="fab_size_mini" id="0x7f0a006a" />
+    <public type="dimen" name="fab_size_normal" id="0x7f0a006b" />
+    <public type="dimen" name="fab_stroke_width" id="0x7f0a006c" />
     <public type="id" name="abs__action_menu_divider" id="0x7f0b0000" />
     <public type="id" name="abs__action_menu_presenter" id="0x7f0b0001" />
     <public type="id" name="abs__home" id="0x7f0b0002" />
@@ -2949,7 +2980,27 @@
     <public type="id" name="map_type_satellite" id="0x7f0b02f7" />
     <public type="id" name="map_type_terrain" id="0x7f0b02f8" />
     <public type="id" name="map_traffic" id="0x7f0b02f9" />
-    <public type="id" name="main_text" id="0x7f0b0fa" />
+    <public type="id" name="main_text" id="0x7f0b02fa" />
+    <public type="id" name="fab_expand_menu_button" id="0x7f0b02fb" />
+    <public type="id" name="fab_label" id="0x7f0b02fc" />
+    <public type="id" name="mini" id="0x7f0b02fd" />
+    <public type="id" name="down" id="0x7f0b02ff" />
+    <public type="id" name="left" id="0x7f0b0300" />
+    <public type="id" name="right" id="0x7f0b0301" />
+    <public type="id" name="up" id="0x7f0b0302" />
+    <public type="id" name="vextil_updater_main_container" id="0x7f0b0303" />
+    <public type="id" name="vextil_updater_phone" id="0x7f0b0304" />
+    <public type="id" name="vextil_updater_icon_container" id="0x7f0b0305" />
+    <public type="id" name="vextil_updater_icon_background" id="0x7f0b0306" />
+    <public type="id" name="vextil_updater_icon_refresh" id="0x7f0b0307" />
+    <public type="id" name="vextil_updater_icon_download" id="0x7f0b0308" />
+    <public type="id" name="vextil_updater_icon_done" id="0x7f0b0309" />
+    <public type="id" name="vextil_updater_icon_logo" id="0x7f0b030a" />
+    <public type="id" name="vextil_updater_text_top" id="0x7f0b030b" />
+    <public type="id" name="vextil_updater_text_bottom" id="0x7f0b030c" />
+    <public type="id" name="vextil_updater_progress" id="0x7f0b030d" />
+    <public type="id" name="vextil_button_container" id="0x7f0b030e" />
+    <public type="id" name="vextil_button_right" id="0x7f0b030f" />
     <public type="integer" name="abs__max_action_buttons" id="0x7f0c0000" />
     <public type="integer" name="google_play_services_version" id="0x7f0c0001" />
     <public type="plurals" name="account_info_gave_n_years_of_service" id="0x7f0d0000" />

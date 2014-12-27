@@ -68,10 +68,12 @@
         <item name="android:textAllCaps">true</item>
     </style>
     <style name="Theme.ActionBar.SubtitleTextStyle" parent="@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle.Inverse">
-        <item name="android:textColor">#ffbebebe</item>
+        <item name="android:textColor">#80ffffff</item>
     </style>
     <style name="Theme.ActionBar.TitleTextStyle" parent="@style/TextAppearance.Sherlock.Widget.ActionBar.Title.Inverse">
         <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">20dp</item>
     </style>
     <style name="Theme.App" parent="@style/Theme.Sherlock.Light.DarkActionBar">
         <item name="android:icon">@drawable/actionbar_logo</item>
@@ -90,6 +92,7 @@
         <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
         <item name="actionBarSize">56dp</item>
         <item name="android:actionBarSize">56dp</item> 
+        <item name="homeAsUpIndicator">@drawable/vextil_home_as_up_legacy</item>
     </style>
     <style name="Theme.App.CondensedActionBar" parent="@style/Theme.App">
         <item name="android:actionButtonStyle">@style/ActionBarCondensedButtonStyle</item>
@@ -221,11 +224,11 @@
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionBar.Subtitle" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_subtitle_text_size</item>
-        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textColor">#80ffffff</item>
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionBar.Subtitle.Inverse" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_subtitle_text_size</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">#80ffffff</item>
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionBar.Title" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
@@ -237,11 +240,11 @@
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionMode.Subtitle" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_subtitle_text_size</item>
-        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textColor">#80ffffff</item>
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionMode.Subtitle.Inverse" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_subtitle_text_size</item>
-        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+        <item name="android:textColor">#80ffffff</item>
     </style>
     <style name="TextAppearance.Sherlock.Compat.Widget.ActionMode.Title" parent="@style/Widget">
         <item name="android:textSize">@dimen/abs__action_bar_title_text_size</item>
