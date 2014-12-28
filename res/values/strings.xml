@@ -1221,7 +1221,7 @@ Please try voice verification."</string>
     <string name="verify_voice_enter_code">Enter code</string>
     <string name="verify_voice_header">Voice verification</string>
     <string name="verify_voice_tap_call_first">Please tap ‘%s’ first.</string>
-    <string name="version_prefix">Version (MD 1.4.0-beta)</string>
+    <string name="version_prefix">Version (MD 2.0.1)</string>
     <string name="vibrate_length_default">Default</string>
     <string name="vibrate_length_long">Long</string>
     <string name="vibrate_length_off">Off</string>
