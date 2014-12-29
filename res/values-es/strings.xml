@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="vextil_menuitem_updater">Actualizador</string>
+    <string name="abs__action_bar_home_description">Ir al inicio</string>
+    <string name="abs__action_bar_up_description">Ir atrás</string>
+    <string name="abs__action_menu_overflow_description">Más opciones</string>
+    <string name="abs__action_mode_done">Hecho</string>
+    <string name="abs__activity_chooser_view_dialog_title_default">Seleccionar actividad</string>
+    <string name="abs__activity_chooser_view_see_all">Mostrar todo...</string>
+    <string name="abs__activitychooserview_choose_application">Selecciona una aplicación</string>
+    <string name="abs__searchview_description_clear">Borrar consulta</string>
+    <string name="abs__searchview_description_query">Buscar consulta</string>
+    <string name="abs__searchview_description_search">Buscar</string>
+    <string name="abs__searchview_description_submit">Enviar consulta</string>
+    <string name="abs__searchview_description_voice">Búsqueda por voz</string>
+    <string name="abs__share_action_provider_share_with">Compartir con...</string>
+    <string name="abs__shareactionprovider_share_with">Compartir con</string>
+    <string name="abs__shareactionprovider_share_with_application">Compartir con %s</string>
     <string name="account_expired_alert">Tu servicio WhatsApp para %1$s caducó el %2$s. ¿Deseas adquirirlo?</string>
     <string name="account_info_account_num">Número de tlf.</string>
     <string name="account_info_check_eligibility">Verificando elegibilidad...</string>
