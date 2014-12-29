@@ -82,17 +82,21 @@
         <item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
         <item name="android:actionBarTabBarStyle">@style/ActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
-        <item name="android:actionOverflowButtonStyle">@style/ActionBarCondensedOverflowButtonStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/VextilOverflowButtonStyle</item>
         <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb_holo</item>
         <item name="icon">@drawable/actionbar_logo</item>
         <item name="actionBarTabStyle">@style/ActionBarTabStyle</item>
         <item name="actionBarTabBarStyle">@style/ActionBarTabBarStyle</item>
         <item name="actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
-        <item name="actionOverflowButtonStyle">@style/ActionBarCondensedOverflowButtonStyle</item>
+        <item name="actionOverflowButtonStyle">@style/VextilOverflowButtonStyle</item>
         <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
         <item name="actionBarSize">56dp</item>
         <item name="android:actionBarSize">56dp</item> 
         <item name="homeAsUpIndicator">@drawable/vextil_home_as_up_legacy</item>
+        <item name="android:homeAsUpIndicator">@drawable/vextil_home_as_up_legacy</item>
+    </style>
+    <style name="VextilOverflowButtonStyle" parent="@style/ActionBarCondensedOverflowButtonStyle">
+       <item name="android:src">@drawable/vextil_overflow</item>    
     </style>
     <style name="Theme.App.CondensedActionBar" parent="@style/Theme.App">
         <item name="android:actionButtonStyle">@style/ActionBarCondensedButtonStyle</item>
