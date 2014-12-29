@@ -74,7 +74,7 @@
     .line 44
     move-object v1, v0
 
-    const-string v2, "200000"
+    const-string v2, "200001"
 
     iput-object v2, v1, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
 
