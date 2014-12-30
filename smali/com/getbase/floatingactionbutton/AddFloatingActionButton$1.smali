@@ -29,9 +29,10 @@
 # direct methods
 .method constructor <init>(Lcom/getbase/floatingactionbutton/AddFloatingActionButton;FFFF)V
     .locals 0
+    .param p1, "this$0"    # Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     .prologue
-    .line 71
+    .line 72
     iput-object p1, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->this$0:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     iput p2, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->val$plusOffset:F
@@ -55,7 +56,7 @@
     .param p2, "paint"    # Landroid/graphics/Paint;
 
     .prologue
-    .line 74
+    .line 75
     iget v1, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->val$plusOffset:F
 
     iget v0, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->val$iconHalfSize:F
@@ -82,7 +83,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 75
+    .line 76
     iget v0, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->val$iconHalfSize:F
 
     iget v1, p0, Lcom/getbase/floatingactionbutton/AddFloatingActionButton$1;->val$plusHalfStroke:F
@@ -109,6 +110,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 76
+    .line 77
     return-void
 .end method

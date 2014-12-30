@@ -8,7 +8,8 @@
     value = {
         Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;,
         Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;,
-        Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
+        Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;,
+        Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
     }
 .end annotation
 
@@ -62,6 +63,8 @@
 
 .field private mLabelsVerticalOffset:I
 
+.field private mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
 .field private mRotatingDrawable:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
 
 
@@ -70,14 +73,14 @@
     .locals 2
 
     .prologue
-    .line 346
+    .line 358
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/OvershootInterpolator;-><init>()V
 
     sput-object v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->sExpandInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 347
+    .line 359
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x40400000
@@ -86,7 +89,7 @@
 
     sput-object v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->sCollapseInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 348
+    .line 360
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
@@ -101,12 +104,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 52
+    .line 60
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 53
+    .line 61
     return-void
 .end method
 
@@ -118,19 +121,8 @@
     .prologue
     const-wide/16 v2, 0x12c
 
-    .line 56
+    .line 64
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    .line 44
-    new-instance v0, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
 
     .line 45
     new-instance v0, Landroid/animation/AnimatorSet;
@@ -141,12 +133,23 @@
 
     move-result-object v0
 
+    iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
+
+    .line 46
+    new-instance v0, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
     iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
-    .line 57
+    .line 65
     invoke-direct {p0, p1, p2}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 58
+    .line 66
     return-void
 .end method
 
@@ -159,19 +162,8 @@
     .prologue
     const-wide/16 v2, 0x12c
 
-    .line 61
+    .line 69
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    .line 44
-    new-instance v0, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
-
-    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
 
     .line 45
     new-instance v0, Landroid/animation/AnimatorSet;
@@ -182,12 +174,23 @@
 
     move-result-object v0
 
+    iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
+
+    .line 46
+    new-instance v0, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
     iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
-    .line 62
+    .line 70
     invoke-direct {p0, p1, p2}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 63
+    .line 71
     return-void
 .end method
 
@@ -196,7 +199,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonPlusColor:I
 
     return v0
@@ -207,7 +210,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonColorNormal:I
 
     return v0
@@ -217,7 +220,7 @@
     .locals 1
 
     .prologue
-    .line 23
+    .line 24
     sget-object v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->sCollapseInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -228,7 +231,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
 
     return v0
@@ -239,7 +242,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonColorPressed:I
 
     return v0
@@ -251,7 +254,7 @@
     .param p1, "x1"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
 
     .prologue
-    .line 23
+    .line 24
     iput-object p1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mRotatingDrawable:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
 
     return-object p1
@@ -262,7 +265,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
 
     return-object v0
@@ -273,7 +276,7 @@
     .param p0, "x0"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     .prologue
-    .line 23
+    .line 24
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
     return-object v0
@@ -283,7 +286,7 @@
     .locals 1
 
     .prologue
-    .line 23
+    .line 24
     sget-object v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->sExpandInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -293,7 +296,7 @@
     .locals 1
 
     .prologue
-    .line 23
+    .line 24
     sget-object v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->sAlphaExpandInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
@@ -304,7 +307,7 @@
     .param p1, "dimension"    # I
 
     .prologue
-    .line 224
+    .line 236
     mul-int/lit8 v0, p1, 0xc
 
     div-int/lit8 v0, v0, 0xa
@@ -317,21 +320,21 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 117
+    .line 129
     new-instance v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$1;
 
     invoke-direct {v0, p0, p1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$1;-><init>(Lcom/getbase/floatingactionbutton/FloatingActionsMenu;Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
-    .line 146
+    .line 158
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     sget v1, Lcom/getbase/floatingactionbutton/R$id;->fab_expand_menu_button:I
 
     invoke-virtual {v0, v1}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->setId(I)V
 
-    .line 147
+    .line 159
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     new-instance v1, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$2;
@@ -340,7 +343,7 @@
 
     invoke-virtual {v0, v1}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 154
+    .line 166
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     invoke-super {p0}, Landroid/view/ViewGroup;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -349,15 +352,17 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 155
+    .line 167
     return-void
 .end method
 
 .method private createLabels()V
-    .locals 7
+    .locals 8
 
     .prologue
-    .line 412
+    sget v7, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
+
+    .line 424
     new-instance v1, Landroid/view/ContextThemeWrapper;
 
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getContext()Landroid/content/Context;
@@ -368,7 +373,7 @@
 
     invoke-direct {v1, v5, v6}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    .line 414
+    .line 426
     .local v1, "context":Landroid/content/Context;
     const/4 v2, 0x0
 
@@ -378,20 +383,20 @@
 
     if-ge v2, v5, :cond_2
 
-    .line 415
+    .line 427
     invoke-virtual {p0, v2}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/getbase/floatingactionbutton/FloatingActionButton;
 
-    .line 416
+    .line 428
     .local v0, "button":Lcom/getbase/floatingactionbutton/FloatingActionButton;
     invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->getTitle()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 418
+    .line 430
     .local v4, "title":Ljava/lang/String;
     iget-object v5, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
@@ -399,28 +404,27 @@
 
     if-eqz v4, :cond_0
 
-    sget v5, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
-
-    invoke-virtual {v0, v5}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->getTag(I)Ljava/lang/Object;
+    .line 431
+    invoke-virtual {v0, v7}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->getTag(I)Ljava/lang/Object;
 
     move-result-object v5
 
     if-eqz v5, :cond_1
 
-    .line 414
+    .line 426
     :cond_0
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 421
+    .line 433
     :cond_1
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 422
+    .line 434
     .local v3, "label":Landroid/widget/TextView;
     invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->getTitle()Ljava/lang/String;
 
@@ -428,17 +432,15 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 423
+    .line 435
     invoke-virtual {p0, v3}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->addView(Landroid/view/View;)V
 
-    .line 425
-    sget v5, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
-
-    invoke-virtual {v0, v5, v3}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->setTag(ILjava/lang/Object;)V
+    .line 437
+    invoke-virtual {v0, v7, v3}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->setTag(ILjava/lang/Object;)V
 
     goto :goto_1
 
-    .line 427
+    .line 439
     .end local v0    # "button":Lcom/getbase/floatingactionbutton/FloatingActionButton;
     .end local v3    # "label":Landroid/widget/TextView;
     .end local v4    # "title":Ljava/lang/String;
@@ -450,7 +452,7 @@
     .locals 2
 
     .prologue
-    .line 86
+    .line 98
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
 
     const/4 v1, 0x2
@@ -480,7 +482,7 @@
     .param p1, "id"    # I
 
     .prologue
-    .line 167
+    .line 179
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -493,14 +495,16 @@
 .end method
 
 .method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 5
+    .locals 6
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attributeSet"    # Landroid/util/AttributeSet;
 
     .prologue
+    sget v5, Lcom/getbase/floatingactionbutton/R$dimen;->fab_shadow_offset:I
+
     const/4 v4, 0x0
 
-    .line 66
+    .line 74
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -527,9 +531,7 @@
 
     move-result-object v2
 
-    sget v3, Lcom/getbase/floatingactionbutton/R$dimen;->fab_shadow_offset:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v2
 
@@ -539,7 +541,7 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonSpacing:I
 
-    .line 67
+    .line 75
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -552,27 +554,25 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsMargin:I
 
-    .line 68
+    .line 76
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    sget v2, Lcom/getbase/floatingactionbutton/R$dimen;->fab_shadow_offset:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsVerticalOffset:I
 
-    .line 70
+    .line 78
     sget-object v1, Lcom/getbase/floatingactionbutton/R$styleable;->FloatingActionsMenu:[I
 
     invoke-virtual {p1, p2, v1, v4, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 71
+    .line 79
     .local v0, "attr":Landroid/content/res/TypedArray;
     const/4 v1, 0x2
 
@@ -588,7 +588,7 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonPlusColor:I
 
-    .line 72
+    .line 80
     const/4 v1, 0x1
 
     const v2, 0x1060013
@@ -603,7 +603,7 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonColorNormal:I
 
-    .line 73
+    .line 81
     const v1, 0x1060012
 
     invoke-direct {p0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getColor(I)I
@@ -616,7 +616,7 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButtonColorPressed:I
 
-    .line 74
+    .line 82
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -625,7 +625,7 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
 
-    .line 75
+    .line 83
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -634,10 +634,10 @@
 
     iput v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsStyle:I
 
-    .line 76
+    .line 84
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 78
+    .line 86
     iget v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsStyle:I
 
     if-eqz v1, :cond_0
@@ -648,7 +648,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 79
+    .line 87
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Action labels in horizontal expand orientation is not supported."
@@ -657,11 +657,11 @@
 
     throw v1
 
-    .line 82
+    .line 90
     :cond_0
     invoke-direct {p0, p1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->createAddButton(Landroid/content/Context;)V
 
-    .line 83
+    .line 91
     return-void
 .end method
 
@@ -672,29 +672,29 @@
     .param p1, "button"    # Lcom/getbase/floatingactionbutton/FloatingActionButton;
 
     .prologue
-    .line 158
+    .line 170
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonsCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->addView(Landroid/view/View;I)V
 
-    .line 159
+    .line 171
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonsCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonsCount:I
 
-    .line 161
+    .line 173
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsStyle:I
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 174
     invoke-direct {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->createLabels()V
 
-    .line 164
+    .line 176
     :cond_0
     return-void
 .end method
@@ -704,7 +704,7 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 343
+    .line 355
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
 
     move-result v0
@@ -716,27 +716,37 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 442
     iget-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
     if-eqz v0, :cond_0
 
-    .line 431
+    .line 443
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
-    .line 432
+    .line 444
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 433
+    .line 445
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 435
+    .line 447
+    iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    if-eqz v0, :cond_0
+
+    .line 448
+    iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    invoke-interface {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;->onMenuCollapsed()V
+
+    .line 451
     :cond_0
     return-void
 .end method
@@ -745,27 +755,37 @@
     .locals 1
 
     .prologue
-    .line 446
+    .line 462
     iget-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
     if-nez v0, :cond_0
 
-    .line 447
+    .line 463
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
-    .line 448
+    .line 464
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 449
+    .line 465
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 451
+    .line 467
+    iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    if-eqz v0, :cond_0
+
+    .line 468
+    iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    invoke-interface {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;->onMenuExpanded()V
+
+    .line 471
     :cond_0
     return-void
 .end method
@@ -774,7 +794,7 @@
     .locals 2
 
     .prologue
-    .line 328
+    .line 340
     new-instance v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
     invoke-super {p0}, Landroid/view/ViewGroup;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -791,7 +811,7 @@
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 333
+    .line 345
     new-instance v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
@@ -808,7 +828,7 @@
     .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
-    .line 338
+    .line 350
     new-instance v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
@@ -824,7 +844,7 @@
     .locals 1
 
     .prologue
-    .line 454
+    .line 474
     iget-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
     return v0
@@ -834,30 +854,30 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 413
     invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
 
-    .line 403
+    .line 415
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mAddButton:Lcom/getbase/floatingactionbutton/AddFloatingActionButton;
 
     invoke-virtual {p0, v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->bringChildToFront(Landroid/view/View;)V
 
-    .line 404
+    .line 416
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildCount()I
 
     move-result v0
 
     iput v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonsCount:I
 
-    .line 406
+    .line 418
     iget v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsStyle:I
 
     if-eqz v0, :cond_0
 
-    .line 407
+    .line 419
     invoke-direct {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->createLabels()V
 
-    .line 409
+    .line 421
     :cond_0
     return-void
 .end method
@@ -871,7 +891,7 @@
     .param p5, "b"    # I
 
     .prologue
-    .line 229
+    .line 241
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
@@ -880,11 +900,11 @@
 
     packed-switch v23, :pswitch_data_0
 
-    .line 324
+    .line 336
     :cond_0
     return-void
 
-    .line 232
+    .line 244
     :pswitch_0
     move-object/from16 v0, p0
 
@@ -896,7 +916,7 @@
 
     const/4 v12, 0x1
 
-    .line 234
+    .line 246
     .local v12, "expandUp":Z
     :goto_0
     if-eqz v12, :cond_2
@@ -915,7 +935,7 @@
 
     sub-int v6, v23, v24
 
-    .line 235
+    .line 247
     .local v6, "addButtonY":I
     :goto_1
     sub-int v23, p4, p2
@@ -932,7 +952,7 @@
 
     sub-int v4, v23, v24
 
-    .line 236
+    .line 248
     .local v4, "addButtonLeft":I
     move-object/from16 v0, p0
 
@@ -972,7 +992,7 @@
 
     invoke-virtual {v0, v4, v6, v1, v2}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->layout(IIII)V
 
-    .line 238
+    .line 250
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsMargin:I
@@ -981,7 +1001,7 @@
 
     sub-int v19, v4, v23
 
-    .line 240
+    .line 252
     .local v19, "labelsRight":I
     if-eqz v12, :cond_3
 
@@ -993,7 +1013,7 @@
 
     sub-int v21, v6, v23
 
-    .line 244
+    .line 256
     .local v21, "nextY":I
     :goto_2
     move-object/from16 v0, p0
@@ -1008,14 +1028,14 @@
     :goto_3
     if-ltz v14, :cond_0
 
-    .line 245
+    .line 257
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 247
+    .line 259
     .local v7, "child":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -1027,13 +1047,13 @@
 
     if-ne v7, v0, :cond_4
 
-    .line 244
+    .line 256
     :goto_4
     add-int/lit8 v14, v14, -0x1
 
     goto :goto_3
 
-    .line 232
+    .line 244
     .end local v4    # "addButtonLeft":I
     .end local v6    # "addButtonY":I
     .end local v7    # "child":Landroid/view/View;
@@ -1046,14 +1066,14 @@
 
     goto :goto_0
 
-    .line 234
+    .line 246
     .restart local v12    # "expandUp":Z
     :cond_2
     const/4 v6, 0x0
 
     goto :goto_1
 
-    .line 240
+    .line 252
     .restart local v4    # "addButtonLeft":I
     .restart local v6    # "addButtonY":I
     .restart local v19    # "labelsRight":I
@@ -1064,6 +1084,7 @@
 
     move-object/from16 v23, v0
 
+    .line 254
     invoke-virtual/range {v23 .. v23}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->getMeasuredHeight()I
 
     move-result v23
@@ -1080,7 +1101,7 @@
 
     goto :goto_2
 
-    .line 249
+    .line 261
     .restart local v7    # "child":Landroid/view/View;
     .restart local v14    # "i":I
     .restart local v21    # "nextY":I
@@ -1105,7 +1126,7 @@
 
     add-int v8, v4, v23
 
-    .line 250
+    .line 262
     .local v8, "childX":I
     if-eqz v12, :cond_6
 
@@ -1115,7 +1136,7 @@
 
     sub-int v9, v21, v23
 
-    .line 251
+    .line 263
     .local v9, "childY":I
     :goto_5
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
@@ -1136,18 +1157,18 @@
 
     invoke-virtual {v7, v8, v9, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 253
+    .line 265
     sub-int v23, v6, v9
 
     move/from16 v0, v23
 
     int-to-float v10, v0
 
-    .line 254
+    .line 266
     .local v10, "collapsedTranslation":F
     const/4 v13, 0x0
 
-    .line 256
+    .line 268
     .local v13, "expandedTranslation":F
     move-object/from16 v0, p0
 
@@ -1164,7 +1185,7 @@
 
     invoke-virtual {v7, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 257
+    .line 269
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
@@ -1180,14 +1201,14 @@
 
     invoke-virtual {v7, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 259
+    .line 271
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v22
 
     check-cast v22, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
-    .line 260
+    .line 272
     .local v22, "params":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mCollapseDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v22 .. v22}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$600(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
@@ -1212,7 +1233,7 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 261
+    .line 273
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mExpandDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v22 .. v22}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$700(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
 
@@ -1236,12 +1257,12 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 262
+    .line 274
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v7}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->setAnimationsTarget(Landroid/view/View;)V
 
-    .line 264
+    .line 276
     sget v23, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
 
     move/from16 v0, v23
@@ -1252,18 +1273,18 @@
 
     check-cast v15, Landroid/view/View;
 
-    .line 265
+    .line 277
     .local v15, "label":Landroid/view/View;
     if-eqz v15, :cond_5
 
-    .line 266
+    .line 278
     invoke-virtual {v15}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v23
 
     sub-int v16, v19, v23
 
-    .line 267
+    .line 279
     .local v16, "labelLeft":I
     move-object/from16 v0, p0
 
@@ -1287,7 +1308,7 @@
 
     add-int v18, v23, v24
 
-    .line 269
+    .line 281
     .local v18, "labelTop":I
     invoke-virtual {v15}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -1305,7 +1326,7 @@
 
     invoke-virtual {v15, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
 
-    .line 271
+    .line 283
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
@@ -1321,7 +1342,7 @@
 
     invoke-virtual {v15, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 272
+    .line 284
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
@@ -1337,14 +1358,14 @@
 
     invoke-virtual {v15, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 274
+    .line 286
     invoke-virtual {v15}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v17
 
     check-cast v17, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
-    .line 275
+    .line 287
     .local v17, "labelParams":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mCollapseDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v17 .. v17}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$600(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
@@ -1369,7 +1390,7 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 276
+    .line 288
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mExpandDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v17 .. v17}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$700(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
 
@@ -1393,12 +1414,12 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 277
+    .line 289
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v15}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->setAnimationsTarget(Landroid/view/View;)V
 
-    .line 280
+    .line 292
     .end local v16    # "labelLeft":I
     .end local v17    # "labelParams":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
     .end local v18    # "labelTop":I
@@ -1413,6 +1434,7 @@
 
     sub-int v21, v9, v23
 
+    .line 294
     :goto_a
     goto/16 :goto_4
 
@@ -1424,7 +1446,7 @@
     :cond_6
     move/from16 v9, v21
 
-    .line 250
+    .line 262
     goto/16 :goto_5
 
     .restart local v9    # "childY":I
@@ -1433,10 +1455,10 @@
     :cond_7
     move/from16 v23, v10
 
-    .line 256
+    .line 268
     goto/16 :goto_6
 
-    .line 257
+    .line 269
     :cond_8
     const/16 v23, 0x0
 
@@ -1449,16 +1471,16 @@
     :cond_9
     move/from16 v23, v10
 
-    .line 271
+    .line 283
     goto :goto_8
 
-    .line 272
+    .line 284
     :cond_a
     const/16 v23, 0x0
 
     goto :goto_9
 
-    .line 280
+    .line 294
     .end local v16    # "labelLeft":I
     .end local v18    # "labelTop":I
     :cond_b
@@ -1478,7 +1500,7 @@
 
     goto :goto_a
 
-    .line 288
+    .line 300
     .end local v4    # "addButtonLeft":I
     .end local v6    # "addButtonY":I
     .end local v7    # "child":Landroid/view/View;
@@ -1509,7 +1531,7 @@
 
     const/4 v11, 0x1
 
-    .line 290
+    .line 302
     .local v11, "expandLeft":Z
     :goto_b
     if-eqz v11, :cond_d
@@ -1528,7 +1550,7 @@
 
     sub-int v5, v23, v24
 
-    .line 291
+    .line 303
     .local v5, "addButtonX":I
     :goto_c
     move-object/from16 v0, p0
@@ -1571,7 +1593,7 @@
 
     invoke-virtual {v0, v5, v1, v2, v3}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->layout(IIII)V
 
-    .line 293
+    .line 305
     if-eqz v11, :cond_e
 
     move-object/from16 v0, p0
@@ -1582,7 +1604,7 @@
 
     sub-int v20, v5, v23
 
-    .line 297
+    .line 309
     .local v20, "nextX":I
     :goto_d
     move-object/from16 v0, p0
@@ -1597,14 +1619,14 @@
     :goto_e
     if-ltz v14, :cond_0
 
-    .line 298
+    .line 310
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 300
+    .line 312
     .restart local v7    # "child":Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -1616,13 +1638,13 @@
 
     if-ne v7, v0, :cond_f
 
-    .line 297
+    .line 309
     :goto_f
     add-int/lit8 v14, v14, -0x1
 
     goto :goto_e
 
-    .line 288
+    .line 300
     .end local v5    # "addButtonX":I
     .end local v7    # "child":Landroid/view/View;
     .end local v11    # "expandLeft":Z
@@ -1633,14 +1655,14 @@
 
     goto :goto_b
 
-    .line 290
+    .line 302
     .restart local v11    # "expandLeft":Z
     :cond_d
     const/4 v5, 0x0
 
     goto :goto_c
 
-    .line 293
+    .line 305
     .restart local v5    # "addButtonX":I
     :cond_e
     move-object/from16 v0, p0
@@ -1649,6 +1671,7 @@
 
     move-object/from16 v23, v0
 
+    .line 307
     invoke-virtual/range {v23 .. v23}, Lcom/getbase/floatingactionbutton/AddFloatingActionButton;->getMeasuredWidth()I
 
     move-result v23
@@ -1665,7 +1688,7 @@
 
     goto :goto_d
 
-    .line 302
+    .line 314
     .restart local v7    # "child":Landroid/view/View;
     .restart local v14    # "i":I
     .restart local v20    # "nextX":I
@@ -1678,7 +1701,7 @@
 
     sub-int v8, v20, v23
 
-    .line 303
+    .line 315
     .restart local v8    # "childX":I
     :goto_10
     move-object/from16 v0, p0
@@ -1699,7 +1722,7 @@
 
     div-int/lit8 v9, v23, 0x2
 
-    .line 304
+    .line 316
     .restart local v9    # "childY":I
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1719,18 +1742,18 @@
 
     invoke-virtual {v7, v8, v9, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 306
+    .line 318
     sub-int v23, v5, v8
 
     move/from16 v0, v23
 
     int-to-float v10, v0
 
-    .line 307
+    .line 319
     .restart local v10    # "collapsedTranslation":F
     const/4 v13, 0x0
 
-    .line 309
+    .line 321
     .restart local v13    # "expandedTranslation":F
     move-object/from16 v0, p0
 
@@ -1747,7 +1770,7 @@
 
     invoke-virtual {v7, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 310
+    .line 322
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
@@ -1763,14 +1786,14 @@
 
     invoke-virtual {v7, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 312
+    .line 324
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v22
 
     check-cast v22, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
 
-    .line 313
+    .line 325
     .restart local v22    # "params":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mCollapseDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v22 .. v22}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$600(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
@@ -1795,7 +1818,7 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 314
+    .line 326
     # getter for: Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->mExpandDir:Landroid/animation/ObjectAnimator;
     invoke-static/range {v22 .. v22}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->access$700(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;)Landroid/animation/ObjectAnimator;
 
@@ -1819,12 +1842,12 @@
 
     invoke-virtual/range {v23 .. v24}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
 
-    .line 315
+    .line 327
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v7}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;->setAnimationsTarget(Landroid/view/View;)V
 
-    .line 317
+    .line 329
     if-eqz v11, :cond_13
 
     move-object/from16 v0, p0
@@ -1835,6 +1858,7 @@
 
     sub-int v20, v8, v23
 
+    .line 331
     :goto_13
     goto/16 :goto_f
 
@@ -1846,7 +1870,7 @@
     :cond_10
     move/from16 v8, v20
 
-    .line 302
+    .line 314
     goto/16 :goto_10
 
     .restart local v8    # "childX":I
@@ -1856,16 +1880,16 @@
     :cond_11
     move/from16 v23, v10
 
-    .line 309
+    .line 321
     goto :goto_11
 
-    .line 310
+    .line 322
     :cond_12
     const/16 v23, 0x0
 
     goto :goto_12
 
-    .line 317
+    .line 331
     .restart local v22    # "params":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$LayoutParams;
     :cond_13
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
@@ -1884,7 +1908,9 @@
 
     goto :goto_13
 
-    .line 229
+    .line 241
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1900,21 +1926,21 @@
     .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    .line 172
+    .line 184
     invoke-virtual {p0, p1, p2}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->measureChildren(II)V
 
-    .line 174
+    .line 186
     const/4 v5, 0x0
 
-    .line 175
+    .line 187
     .local v5, "width":I
     const/4 v1, 0x0
 
-    .line 177
+    .line 189
     .local v1, "height":I
     const/4 v4, 0x0
 
-    .line 179
+    .line 191
     .local v4, "maxLabelWidth":I
     const/4 v2, 0x0
 
@@ -1924,18 +1950,18 @@
 
     if-ge v2, v6, :cond_1
 
-    .line 180
+    .line 192
     invoke-virtual {p0, v2}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 182
+    .line 194
     .local v0, "child":Landroid/view/View;
     iget v6, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
 
     packed-switch v6, :pswitch_data_0
 
-    .line 195
+    .line 207
     :goto_1
     invoke-direct {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->expandsHorizontally()Z
 
@@ -1943,7 +1969,7 @@
 
     if-nez v6, :cond_0
 
-    .line 196
+    .line 208
     sget v6, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
 
     invoke-virtual {v0, v6}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -1952,11 +1978,11 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 197
+    .line 209
     .local v3, "label":Landroid/widget/TextView;
     if-eqz v3, :cond_0
 
-    .line 198
+    .line 210
     invoke-virtual {v3}, Landroid/widget/TextView;->getMeasuredWidth()I
 
     move-result v6
@@ -1965,14 +1991,14 @@
 
     move-result v4
 
-    .line 179
+    .line 191
     .end local v3    # "label":Landroid/widget/TextView;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 185
+    .line 197
     :pswitch_0
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1982,17 +2008,17 @@
 
     move-result v5
 
-    .line 186
+    .line 198
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
     add-int/2addr v1, v6
 
-    .line 187
+    .line 199
     goto :goto_1
 
-    .line 190
+    .line 202
     :pswitch_1
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2000,7 +2026,7 @@
 
     add-int/2addr v5, v6
 
-    .line 191
+    .line 203
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
@@ -2011,7 +2037,7 @@
 
     goto :goto_1
 
-    .line 203
+    .line 215
     .end local v0    # "child":Landroid/view/View;
     :cond_1
     invoke-direct {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->expandsHorizontally()Z
@@ -2020,27 +2046,27 @@
 
     if-nez v6, :cond_2
 
-    .line 204
+    .line 216
     iget v6, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mLabelsMargin:I
 
     add-int/2addr v6, v4
 
     add-int/2addr v5, v6
 
-    .line 207
+    .line 219
     :cond_2
     iget v6, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpandDirection:I
 
     packed-switch v6, :pswitch_data_1
 
-    .line 220
+    .line 232
     :goto_2
     invoke-virtual {p0, v5, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->setMeasuredDimension(II)V
 
-    .line 221
+    .line 233
     return-void
 
-    .line 210
+    .line 222
     :pswitch_2
     iget v6, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonSpacing:I
 
@@ -2054,15 +2080,15 @@
 
     add-int/2addr v1, v6
 
-    .line 211
+    .line 223
     invoke-direct {p0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->adjustForOvershoot(I)I
 
     move-result v1
 
-    .line 212
+    .line 224
     goto :goto_2
 
-    .line 215
+    .line 227
     :pswitch_3
     iget v6, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mButtonSpacing:I
 
@@ -2076,14 +2102,16 @@
 
     add-int/2addr v5, v6
 
-    .line 216
+    .line 228
     invoke-direct {p0, v5}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->adjustForOvershoot(I)I
 
     move-result v5
 
     goto :goto_2
 
-    .line 182
+    .line 194
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2092,7 +2120,7 @@
         :pswitch_1
     .end packed-switch
 
-    .line 207
+    .line 219
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_2
@@ -2107,28 +2135,28 @@
     .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
-    .line 468
+    .line 488
     instance-of v1, p1, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
 
     if-eqz v1, :cond_2
 
     move-object v0, p1
 
-    .line 469
+    .line 489
     check-cast v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
 
-    .line 470
+    .line 490
     .local v0, "savedState":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
     iget-boolean v1, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;->mExpanded:Z
 
     iput-boolean v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
-    .line 472
+    .line 492
     iget-object v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mRotatingDrawable:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 473
+    .line 493
     iget-object v2, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mRotatingDrawable:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;
 
     iget-boolean v1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
@@ -2140,7 +2168,7 @@
     :goto_0
     invoke-virtual {v2, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$RotatingDrawable;->setRotation(F)V
 
-    .line 476
+    .line 496
     :cond_0
     invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -2148,19 +2176,19 @@
 
     invoke-super {p0, v1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 480
+    .line 500
     .end local v0    # "savedState":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
     :goto_1
     return-void
 
-    .line 473
+    .line 493
     .restart local v0    # "savedState":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 478
+    .line 498
     .end local v0    # "savedState":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
     :cond_2
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
@@ -2172,44 +2200,56 @@
     .locals 3
 
     .prologue
-    .line 459
+    .line 479
     invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 460
+    .line 480
     .local v1, "superState":Landroid/os/Parcelable;
     new-instance v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
 
     invoke-direct {v0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 461
+    .line 481
     .local v0, "savedState":Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;
     iget-boolean v2, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
     iput-boolean v2, v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu$SavedState;->mExpanded:Z
 
-    .line 463
+    .line 483
     return-object v0
+.end method
+
+.method public setOnFloatingActionsMenuUpdateListener(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;)V
+    .locals 0
+    .param p1, "listener"    # Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    .prologue
+    .line 94
+    iput-object p1, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mListener:Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;
+
+    .line 95
+    return-void
 .end method
 
 .method public toggle()V
     .locals 1
 
     .prologue
-    .line 438
+    .line 454
     iget-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
     if-eqz v0, :cond_0
 
-    .line 439
+    .line 455
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->collapse()V
 
-    .line 443
+    .line 459
     :goto_0
     return-void
 
-    .line 441
+    .line 457
     :cond_0
     invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->expand()V
 
