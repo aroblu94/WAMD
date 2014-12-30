@@ -1979,7 +1979,6 @@
     .line 55
     invoke-super {p0}, Lcom/whatsapp/DialogToastFragmentActivity;->onDestroy()V
 
-    invoke-direct {p0}, Lcom/whatsapp/Conversations;->closeFAB()Z
     .line 87
     return-void
 .end method
@@ -3183,7 +3182,6 @@
     invoke-direct {p0}, Lcom/whatsapp/Conversations;->closeFAB()Z
     move-result v0
     if-nez v0, :cond_0
-    return-void
     invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
 
     :cond_0
