@@ -1,5 +1,5 @@
 .class public Lninja/vextil/ConversationsLayout;
-.super Landroid/widget/RelativeLayout;
+.super Landroid/widget/FrameLayout;
 .source "ConversationsLayout.java"
 
 
@@ -16,10 +16,10 @@
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .line 17
-    invoke-direct {p0, p1, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .line 14
+    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 18
+    .line 15
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 2
 
     .prologue
-    .line 22
+    .line 19
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lninja/vextil/ConversationsLayout;->getChildAt(I)Landroid/view/View;
@@ -38,7 +38,7 @@
 
     iput-object v0, p0, Lninja/vextil/ConversationsLayout;->mOverlay:Landroid/view/View;
 
-    .line 23
+    .line 20
     iget-object v0, p0, Lninja/vextil/ConversationsLayout;->mOverlay:Landroid/view/View;
 
     new-instance v1, Lninja/vextil/ConversationsLayout$1;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 30
+    .line 27
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lninja/vextil/ConversationsLayout;->getChildAt(I)Landroid/view/View;
@@ -58,7 +58,7 @@
 
     iput-object v0, p0, Lninja/vextil/ConversationsLayout;->mFABMenu:Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
-    .line 31
+    .line 28
     iget-object v0, p0, Lninja/vextil/ConversationsLayout;->mFABMenu:Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     new-instance v1, Lninja/vextil/ConversationsLayout$2;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->setOnFloatingActionsMenuUpdateListener(Lcom/getbase/floatingactionbutton/FloatingActionsMenu$OnFloatingActionsMenuUpdateListener;)V
 
-    .line 48
+    .line 45
     return-void
 .end method
