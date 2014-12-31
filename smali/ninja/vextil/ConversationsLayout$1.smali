@@ -27,7 +27,7 @@
     .param p1, "this$0"    # Lninja/vextil/ConversationsLayout;
 
     .prologue
-    .line 23
+    .line 20
     iput-object p1, p0, Lninja/vextil/ConversationsLayout$1;->this$0:Lninja/vextil/ConversationsLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,14 +43,14 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 26
+    .line 23
     iget-object v0, p0, Lninja/vextil/ConversationsLayout$1;->this$0:Lninja/vextil/ConversationsLayout;
 
     iget-object v0, v0, Lninja/vextil/ConversationsLayout;->mFABMenu:Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
 
     invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->collapse()V
 
-    .line 27
+    .line 24
     const/4 v0, 0x1
 
     return v0
