@@ -3001,6 +3001,7 @@
     <public type="id" name="vextil_updater_progress" id="0x7f0b030d" />
     <public type="id" name="vextil_button_container" id="0x7f0b030e" />
     <public type="id" name="vextil_button_right" id="0x7f0b030f" />
+    <public type="id" name="multiple_actions" id="0x7f0b0310" />
     <public type="integer" name="abs__max_action_buttons" id="0x7f0c0000" />
     <public type="integer" name="google_play_services_version" id="0x7f0c0001" />
     <public type="plurals" name="account_info_gave_n_years_of_service" id="0x7f0d0000" />

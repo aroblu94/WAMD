@@ -2679,6 +2679,7 @@
     .line 106
     invoke-virtual {v0}, Lcom/whatsapp/util/b1;->c()J
 
+    invoke-direct {p0}, Lcom/whatsapp/Conversations;->closeFAB()Z
     .line 31
     return-void
 .end method
@@ -3122,6 +3123,7 @@
 
     invoke-static {v0}, Lcom/whatsapp/amu;->b(Lcom/whatsapp/a7u;)V
 
+    invoke-direct {p0}, Lcom/whatsapp/Conversations;->closeFAB()Z
     .line 206
     return-void
 .end method
@@ -3154,5 +3156,34 @@
     const-class v1, Lcom/whatsapp/ListMembersSelector;
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
     invoke-virtual {p0, v0}, Lcom/whatsapp/Conversations;->startActivity(Landroid/content/Intent;)V
+    return-void
+.end method
+
+.method private closeFAB()Z
+    .locals 2
+    .prologue
+    const v1, 0x7f0b0310
+    invoke-virtual {p0, v1}, Lcom/whatsapp/Conversations;->findViewById(I)Landroid/view/View;
+    move-result-object v0
+    check-cast v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
+    invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->isExpanded()Z
+    move-result v1
+    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->collapse()V
+    const/4 v1, 0x1
+    :cond_0
+    return v1
+.end method
+
+.method protected onBackPressed()V
+    .locals 1
+
+    .prologue
+    invoke-direct {p0}, Lcom/whatsapp/Conversations;->closeFAB()Z
+    move-result v0
+    if-nez v0, :cond_0
+    invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
+
+    :cond_0
     return-void
 .end method
