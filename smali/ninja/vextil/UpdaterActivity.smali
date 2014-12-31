@@ -394,7 +394,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "http://whatsapp.vexmd.info/shouldUpdate.php?version=200000&subVersion=S"
+    const-string v5, "http://whatsapp.vexmd.info/shouldUpdate.php?version=200001&subVersion=S"
 
     aput-object v5, v3, v4
 
