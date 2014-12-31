@@ -262,6 +262,8 @@ Si tienes tanto un teléfono nuevo como un número nuevo, cambia el número en t
     <string name="conversations_most_recent_video">Vídeo</string>
     <string name="conversations_most_recent_voice">Nota de audio</string>
     <string name="copy">Copiar</string>
+    <string name="copyright1">"© 2010-2015 WhatsApp Inc.
+Modificado por /u/Vextil (Joaquin Cuitiño)."</string>
     <string name="corrupt_installation_contact_support_prompt">Si has intentado los pasos anteriores y aún sigues teniendo este problema, &lt;a href=\"contact-support\">contacta con soporte&lt;/a>.</string>
     <string name="corrupt_installation_description">WhatsApp tiene un problema y necesita ser instalado de nuevo. Toca el botón de abajo para ir al Play Store, desinstala WhatsApp e instálalo de nuevo.</string>
     <string name="corrupt_installation_description_website_distribution">WhatsApp tiene un problema y necesita ser instalado de nuevo. Pulsa en el siguiente botón para desinstalar WhatsApp. Visita &lt;a href=\"%s\">whatsapp.com&lt;/a> para descargar y reinstalar WhatsApp.</string>

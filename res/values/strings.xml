@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="vextil_version_code">7</string>
+    <string name="vextil_version">WhatsAppMD 2.0.1</string>
     <string name="vextil_sub_version_code">S</string>
     <string name="vextil_menuitem_updater">Updater</string>
     <string name="abs__action_bar_home_description">Navigate home</string>
@@ -278,7 +279,7 @@ Modified by /u/Vextil (Joaquin Cuitiño)."</string>
     <string name="current_status">Your current status</string>
     <string name="currently_logged_into">Logged in computers</string>
     <string name="custom_rom_detected">You have a custom ROM installed. Custom ROMs can cause problems with WhatsApp Messenger and are unsupported by our customer service team.</string>
-    <string name="custom_rom_info">Custom ROMs have been known to cause problems with keyboard input methods, cloud to device (C2DM) notifications as well as timely and accurate message delivery. Further, many custom ROMs are bundled with task killing properties that cause the same problems as a 3rd party task killer. Please understand that custom ROMs are not supported by WhatsApp and that you use them at your own risk.</string>
+    <string name="custom_rom_info">Custom ROMs have been known to cause problems with keyboard input methods, butt to device (C2DM) notifications as well as timely and accurate message delivery. Further, many custom ROMs are bundled with task killing properties that cause the same problems as a 3rd party task killer. Please understand that custom ROMs are not supported by WhatsApp and that you use them at your own risk.</string>
     <string name="default_wallpaper">Default</string>
     <string name="delete">Delete</string>
     <string name="delete_account_change_number_question">Want to change number instead?</string>
@@ -1221,7 +1222,7 @@ Please try voice verification."</string>
     <string name="verify_voice_enter_code">Enter code</string>
     <string name="verify_voice_header">Voice verification</string>
     <string name="verify_voice_tap_call_first">Please tap ‘%s’ first.</string>
-    <string name="version_prefix">Version (MD 2.0.1)</string>
+    <string name="version_prefix">Version</string>
     <string name="vibrate_length_default">Default</string>
     <string name="vibrate_length_long">Long</string>
     <string name="vibrate_length_off">Off</string>
