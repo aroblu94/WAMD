@@ -186,7 +186,7 @@
 
     const-string v14, "User-Agent"
 
-    const-string v15, "WhatsAppMD-Updater_200000"
+    const-string v15, "WhatsAppMD-Updater_200100"
 
     invoke-virtual {v13, v14, v15}, Lorg/apache/http/client/methods/HttpGet;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 

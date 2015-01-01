@@ -74,7 +74,7 @@
     .line 44
     move-object v1, v0
 
-    const-string v2, "200001"
+    const-string v2, "200100"
 
     iput-object v2, v1, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
 
@@ -394,7 +394,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "http://whatsapp.vexmd.info/shouldUpdate.php?version=200001&subVersion=S"
+    const-string v5, "http://whatsapp.vexmd.info/shouldUpdate.php?version=200100&subVersion=S"
 
     aput-object v5, v3, v4
 
