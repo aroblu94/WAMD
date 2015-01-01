@@ -4,6 +4,10 @@
         <item name="android:textColor">@color/black_semi_transparent</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+        <item name="android:paddingTop">4dip</item>
+        <item name="android:paddingBottom">4dip</item>
         <item name="android:elevation">2dp</item>
     </style>
     <style name="ActionBarButtonStyle" parent="@style/Widget.Sherlock.ActionButton" />

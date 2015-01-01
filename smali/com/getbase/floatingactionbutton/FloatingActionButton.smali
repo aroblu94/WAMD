@@ -868,10 +868,22 @@
     .local v0, "label":Landroid/widget/TextView;
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 171
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 170
+    .line 172
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setClickable(Z)V
+
+    .line 173
+    new-instance v1, Lcom/getbase/floatingactionbutton/FloatingActionButton$3;
+
+    invoke-direct {v1, p0}, Lcom/getbase/floatingactionbutton/FloatingActionButton$3;-><init>(Lcom/getbase/floatingactionbutton/FloatingActionButton;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 180
     :cond_0
     return-void
 .end method
