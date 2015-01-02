@@ -426,17 +426,13 @@
 
     .line 434
     .local v3, "label":Landroid/widget/TextView;
-    invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->getTitle()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 435
     invoke-virtual {p0, v3}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->addView(Landroid/view/View;)V
 
-    .line 437
+    .line 436
     invoke-virtual {v0, v7, v3}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->setTag(ILjava/lang/Object;)V
+
+    .line 437
+    invoke-virtual {v0, v4}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->setTitle(Ljava/lang/String;)V
 
     goto :goto_1
 
