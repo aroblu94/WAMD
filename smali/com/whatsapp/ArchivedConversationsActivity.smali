@@ -257,7 +257,7 @@
     .end packed-switch
 .end method
 
-.method public fab(Landroid/view/View;)V
+.method public FABChat(Landroid/view/View;)V
     .locals 3
     .prologue
     const/4 v0, 0x0
@@ -266,5 +266,67 @@
     const-class v1, Lcom/whatsapp/ContactPicker;
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
     invoke-virtual {p0, v0, v2}, Lcom/whatsapp/Conversations;->startActivityForResult(Landroid/content/Intent;I)V
+    return-void
+.end method
+
+.method public FABGroup(Landroid/view/View;)V
+    .locals 3
+    new-instance v0, Landroid/content/Intent;
+    const-class v1, Lcom/whatsapp/NewGroup;
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversations;->startActivity(Landroid/content/Intent;)V
+    return-void
+.end method
+
+.method public FABBroadcast(Landroid/view/View;)V
+    .locals 3
+    .prologue
+    new-instance v0, Landroid/content/Intent;
+    const-class v1, Lcom/whatsapp/ListMembersSelector;
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversations;->startActivity(Landroid/content/Intent;)V
+    return-void
+.end method
+
+.method private closeFAB()Z
+    .locals 2
+    .prologue
+    const v1, 0x7f0b0310
+    invoke-virtual {p0, v1}, Lcom/whatsapp/ArchivedConversationsActivity;->findViewById(I)Landroid/view/View;
+    move-result-object v0
+    check-cast v0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;
+    invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->isExpanded()Z
+    move-result v1
+    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->collapse()V
+    const/4 v1, 0x1
+    :cond_0
+    return v1
+.end method
+
+.method public onPause()V
+    .locals 0
+    invoke-super {p0}, Lcom/whatsapp/DialogToastFragmentActivity;->onPause()V
+    invoke-direct {p0}, Lcom/whatsapp/ArchivedConversationsActivity;->closeFAB()Z
+    return-void
+.end method
+
+.method public onStop()V
+    .locals 0
+    invoke-super {p0}, Lcom/whatsapp/DialogToastFragmentActivity;->onStop()V
+    invoke-direct {p0}, Lcom/whatsapp/ArchivedConversationsActivity;->closeFAB()Z
+    return-void
+.end method
+
+.method protected onBackPressed()V
+    .locals 1
+
+    .prologue
+    invoke-direct {p0}, Lcom/whatsapp/ArchivedConversationsActivity;->closeFAB()Z
+    move-result v0
+    if-nez v0, :cond_0
+    invoke-super {p0}, Landroid/app/Activity;->onBackPressed()V
+
+    :cond_0
     return-void
 .end method
