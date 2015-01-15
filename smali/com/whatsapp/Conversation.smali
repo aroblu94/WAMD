@@ -5613,10 +5613,6 @@
     .line 685
     iget-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
 
-    const v1, -0x3f0b0b0c
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
-
     sget v0, Lcom/whatsapp/App;->h:I
 
     if-eqz v0, :cond_1
@@ -20757,22 +20753,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/whatsapp/Conversation;->ar:Landroid/view/View;
-
-    .line 1532
-    const v0, 0x7f0b0161
-
-    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversation;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
-
-    .line 446
-    iget-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
-
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 1760
     const v0, 0x7f0b0146
