@@ -434,6 +434,9 @@
     .line 437
     invoke-virtual {v0, v4}, Lcom/getbase/floatingactionbutton/FloatingActionButton;->setTitle(Ljava/lang/String;)V
 
+    const/4 v5, 0x0
+    invoke-virtual {v3, v5}, Landroid/widget/TextView;->setClickable(Z)V
+
     goto :goto_1
 
     .line 439
@@ -661,6 +664,56 @@
     return-void
 .end method
 
+.method private setLabelsClickable(Z)V
+    .locals 4
+    .param p1, "clickable"    # Z
+
+    .prologue
+    .line 97
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    invoke-virtual {p0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildCount()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_1
+
+    .line 98
+    invoke-virtual {p0, v1}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 99
+    .local v0, "child":Landroid/view/View;
+    sget v3, Lcom/getbase/floatingactionbutton/R$id;->fab_label:I
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/TextView;
+
+    .line 100
+    .local v2, "label":Landroid/widget/TextView;
+    if-eqz v2, :cond_0
+
+    .line 101
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setClickable(Z)V
+
+    .line 97
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 104
+    .end local v0    # "child":Landroid/view/View;
+    .end local v2    # "label":Landroid/widget/TextView;
+    :cond_1
+    return-void
+.end method
 
 # virtual methods
 .method public addButton(Lcom/getbase/floatingactionbutton/FloatingActionButton;)V
@@ -722,6 +775,8 @@
 
     iput-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
 
+    invoke-direct {p0, v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->setLabelsClickable(Z)V
+
     .line 444
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
 
@@ -760,6 +815,8 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mExpanded:Z
+
+    invoke-direct {p0, v0}, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->setLabelsClickable(Z)V
 
     .line 464
     iget-object v0, p0, Lcom/getbase/floatingactionbutton/FloatingActionsMenu;->mCollapseAnimation:Landroid/animation/AnimatorSet;
