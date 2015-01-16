@@ -5640,9 +5640,6 @@
     .line 1604
     iget-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
 
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
