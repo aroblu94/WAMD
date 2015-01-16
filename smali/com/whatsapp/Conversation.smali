@@ -20754,6 +20754,18 @@
 
     iput-object v0, p0, Lcom/whatsapp/Conversation;->ar:Landroid/view/View;
 
+    .line 1532
+    const v0, 0x7f0b0161
+
+    invoke-virtual {p0, v0}, Lcom/whatsapp/Conversation;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
+
+    .line 446
+    iget-object v0, p0, Lcom/whatsapp/Conversation;->a7:Landroid/view/View;
+
     .line 1760
     const v0, 0x7f0b0146
 
