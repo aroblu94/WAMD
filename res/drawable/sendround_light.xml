@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Bottom 2dp Shadow -->
+<item>
+    <shape  android:shape="oval">
+
+        <solid android:color="@color/primary_accent_bottom_mic" />
+        <corners android:radius="20dp" />
+
+    </shape>
+</item>
+<item android:bottom="4px">
+
+    <shape  android:shape="oval">
+
+    <solid android:color="@color/primary_accent_top_mic" />
+    <corners android:radius="20dp" />
+
+
+    </shape>
+
+</item>
+<item android:bottom="2px">
+
+    <shape  android:shape="oval">
+
+    <solid android:color="@color/primary_accent_light" />
+    <corners android:radius="20dp" />
+
+
+    </shape>
+
+</item>
+
+</layer-list>

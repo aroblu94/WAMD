@@ -15,12 +15,7 @@ encoding="utf-8"?>
         android:layout_height="fill_parent"
         android:scaleType="centerCrop"
         />
-    <!--
-         To scroll behind the text input, remove the line with layout_above and add android:paddingBottom
-         with a value matching the height of the text input
-         This has one drawback though, the chat bubbles don't align to the top of the text field automatically anymore
-         if you add a new line to it
-    -->
+    
     <ListView android:id="@android:id/list"
         android:background="@null"
         android:layout_width="fill_parent"
@@ -38,11 +33,11 @@ encoding="utf-8"?>
         android:layout_centerHorizontal="true"
         style="@style/DateDivider"
         />
-    <!-- Set height to 0 to remove the small gray line above the text input -->
+    
     <View android:id="@id/list_separator"
         android:background="@color/light_gray"
         android:layout_width="fill_parent"
-        android:layout_height="1.0dip"
+        android:layout_height="0.0dip"
         android:layout_above="@id/footer"
         />
     <FrameLayout android:id="@id/voice_recorder_decor"

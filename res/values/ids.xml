@@ -767,4 +767,5 @@
     <item type="id" name="map_type_satellite">false</item>
     <item type="id" name="map_type_terrain">false</item>
     <item type="id" name="map_traffic">false</item>
+	<item type="id" name="compose_message_bubble" />
 </resources>
