@@ -3,67 +3,36 @@
 .source "UpdaterActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lninja/vextil/UpdaterActivity$DownloadUpdateTask;,
-        Lninja/vextil/UpdaterActivity$CheckForUpdateTask;
-    }
-.end annotation
-
-
 # instance fields
 .field private buttonContainer:Landroid/widget/RelativeLayout;
 
-.field private final buttonContainerR:I
-
 .field private buttonRight:Landroid/widget/Button;
-
-.field private final buttonRightR:I
 
 .field private iconDone:Landroid/widget/ImageView;
 
-.field private final iconDoneR:I
-
 .field private iconDownload:Landroid/widget/ImageView;
-
-.field private final iconDownloadR:I
 
 .field private iconLogo:Landroid/widget/ImageView;
 
-.field private final iconLogoR:I
-
 .field private iconRefresh:Landroid/widget/ImageView;
-
-.field private final iconRefreshR:I
 
 .field private progressBar:Landroid/widget/ProgressBar;
 
-.field private final progressBarR:I
-
-.field private final pulseAnimationR:I
-
-.field private final subVersionCode:Ljava/lang/String;
+.field public subVersionCode:Ljava/lang/String;
 
 .field private textBottom:Landroid/widget/TextView;
 
-.field private final textBottomR:I
-
 .field private textTop:Landroid/widget/TextView;
 
-.field private final textTopR:I
-
-.field private final updaterActivityR:I
-
-.field private final versionCode:Ljava/lang/String;
+.field public versionCode:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -71,177 +40,14 @@
 
     invoke-direct {v1}, Landroid/app/Activity;-><init>()V
 
-    .line 44
-    move-object v1, v0
-
-    const-string v2, "200100"
-
-    iput-object v2, v1, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
-
-    .line 45
-    move-object v1, v0
-
-    const-string v2, "S"
-
-    iput-object v2, v1, Lninja/vextil/UpdaterActivity;->subVersionCode:Ljava/lang/String;
-
-    .line 47
-    move-object v1, v0
-
-    const v2, 0x7f0b030b
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->textTopR:I
-
-    .line 48
-    move-object v1, v0
-
-    const v2, 0x7f0b030c
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->textBottomR:I
-
-    .line 49
-    move-object v1, v0
-
-    const v2, 0x7f0b030e
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->buttonContainerR:I
-
-    .line 50
-    move-object v1, v0
-
-    const v2, 0x7f0b030f
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->buttonRightR:I
-
-    .line 51
-    move-object v1, v0
-
-    const v2, 0x7f0b0307
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->iconRefreshR:I
-
-    .line 52
-    move-object v1, v0
-
-    const v2, 0x7f0b0309
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->iconDoneR:I
-
-    .line 53
-    move-object v1, v0
-
-    const v2, 0x7f0b0308
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->iconDownloadR:I
-
-    .line 54
-    move-object v1, v0
-
-    const v2, 0x7f0b030a
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->iconLogoR:I
-
-    .line 55
-    move-object v1, v0
-
-    const v2, 0x7f0b030d
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->progressBarR:I
-
-    .line 56
-    move-object v1, v0
-
-    const v2, 0x7f0300bd
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->updaterActivityR:I
-
-    .line 57
-    move-object v1, v0
-
-    const v2, 0x7f040005
-
-    iput v2, v1, Lninja/vextil/UpdaterActivity;->pulseAnimationR:I
-
-    .line 321
     return-void
 .end method
 
-.method static synthetic access$000(Lninja/vextil/UpdaterActivity;)Landroid/widget/RelativeLayout;
+.method static synthetic access$000(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
     .locals 2
 
     .prologue
-    .line 42
-    move-object v0, p0
-
-    .local v0, "x0":Lninja/vextil/UpdaterActivity;
-    move-object v1, v0
-
-    iget-object v1, v1, Lninja/vextil/UpdaterActivity;->buttonContainer:Landroid/widget/RelativeLayout;
-
-    move-object v0, v1
-
-    .end local v0    # "x0":Lninja/vextil/UpdaterActivity;
-    return-object v0
-.end method
-
-.method static synthetic access$100(Lninja/vextil/UpdaterActivity;)V
-    .locals 2
-
-    .prologue
-    .line 42
-    move-object v0, p0
-
-    .local v0, "x0":Lninja/vextil/UpdaterActivity;
-    move-object v1, v0
-
-    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->setCheckingForUpdate()V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lninja/vextil/UpdaterActivity;)Landroid/widget/ProgressBar;
-    .locals 2
-
-    .prologue
-    .line 42
-    move-object v0, p0
-
-    .local v0, "x0":Lninja/vextil/UpdaterActivity;
-    move-object v1, v0
-
-    iget-object v1, v1, Lninja/vextil/UpdaterActivity;->progressBar:Landroid/widget/ProgressBar;
-
-    move-object v0, v1
-
-    .end local v0    # "x0":Lninja/vextil/UpdaterActivity;
-    return-object v0
-.end method
-
-.method static synthetic access$1200(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
-    .locals 4
-
-    .prologue
-    .line 42
-    move-object v0, p0
-
-    .local v0, "x0":Lninja/vextil/UpdaterActivity;
-    move-object v1, p1
-
-    .local v1, "x1":Ljava/lang/String;
-    move-object v2, v0
-
-    move-object v3, v1
-
-    invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setUpdateDownloaded(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
-    .locals 2
-
-    .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -255,26 +61,11 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lninja/vextil/UpdaterActivity;)V
+.method static synthetic access$100(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
     .locals 2
 
     .prologue
-    .line 42
-    move-object v0, p0
-
-    .local v0, "x0":Lninja/vextil/UpdaterActivity;
-    move-object v1, v0
-
-    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->runNewCheckForUpdateTask()V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
-    .locals 2
-
-    .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -288,11 +79,11 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
+.method static synthetic access$200(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
     .locals 2
 
     .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -306,11 +97,11 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
+.method static synthetic access$300(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
     .locals 2
 
     .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -324,11 +115,11 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
+.method static synthetic access$400(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
     .locals 2
 
     .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -342,11 +133,11 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
+.method static synthetic access$500(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
     .locals 2
 
     .prologue
-    .line 42
+    .line 29
     move-object v0, p0
 
     .local v0, "x0":Lninja/vextil/UpdaterActivity;
@@ -360,49 +151,589 @@
     return-object v0
 .end method
 
-.method private runNewCheckForUpdateTask()V
-    .locals 7
+.method static synthetic access$lambda$0(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
 
-    .prologue
-    .line 272
     move-object v0, p0
 
-    .local v0, "this":Lninja/vextil/UpdaterActivity;
-    new-instance v1, Lninja/vextil/UpdaterActivity$CheckForUpdateTask;
+    move-object v1, v0
 
-    move-object v6, v1
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->lambda$onCreate$0()V
 
-    move-object v1, v6
+    return-void
+.end method
 
-    move-object v2, v6
+.method static synthetic access$lambda$1(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
+
+    move-object v0, p0
+
+    move-object v1, v0
+
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->setCheckingForUpdate()V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$10(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    .locals 4
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, v0
+
+    move-object v3, v1
+
+    invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->lambda$null$2(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$2(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
+
+    move-object v0, p0
+
+    move-object v1, v0
+
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->lambda$setCheckingForUpdate$1()V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$3(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
+
+    move-object v0, p0
+
+    move-object v1, v0
+
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->runNewCheckForUpdateTask()V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$4(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
+
+    move-object v0, p0
+
+    move-object v1, v0
+
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->lambda$setDownloadingUpdate$3()V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$5(Lninja/vextil/UpdaterActivity;Ljava/lang/String;Landroid/view/View;)V
+    .locals 6
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
 
     move-object v3, v0
 
-    const/4 v4, 0x0
+    move-object v4, v1
 
-    invoke-direct {v2, v3, v4}, Lninja/vextil/UpdaterActivity$CheckForUpdateTask;-><init>(Lninja/vextil/UpdaterActivity;Lninja/vextil/UpdaterActivity$1;)V
+    move-object v5, v2
 
-    const/4 v2, 0x1
+    invoke-direct {v3, v4, v5}, Lninja/vextil/UpdaterActivity;->lambda$setUpdateDownloaded$4(Ljava/lang/String;Landroid/view/View;)V
 
-    new-array v2, v2, [Ljava/lang/String;
+    return-void
+.end method
 
-    move-object v6, v2
+.method static synthetic access$lambda$6(Lninja/vextil/UpdaterActivity;Landroid/view/View;)V
+    .locals 4
 
-    move-object v2, v6
+    move-object v0, p0
 
-    move-object v3, v6
+    move-object v1, p1
 
-    const/4 v4, 0x0
+    move-object v2, v0
 
-    const-string v5, "http://whatsapp.vexmd.info/shouldUpdate.php?version=200100&subVersion=S"
+    move-object v3, v1
 
-    aput-object v5, v3, v4
+    invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->lambda$setNoNewUpdate$5(Landroid/view/View;)V
 
-    invoke-virtual {v1, v2}, Lninja/vextil/UpdaterActivity$CheckForUpdateTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
+    return-void
+.end method
+
+.method static synthetic access$lambda$7(Lninja/vextil/UpdaterActivity;)V
+    .locals 2
+
+    move-object v0, p0
+
+    move-object v1, v0
+
+    invoke-direct {v1}, Lninja/vextil/UpdaterActivity;->lambda$setIconVisible$6()V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$8(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    .locals 4
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, v0
+
+    move-object v3, v1
+
+    invoke-virtual {v2, v3}, Lninja/vextil/UpdaterActivity;->OnCheckForUpdateFinished(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$lambda$9(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    .locals 4
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, v0
+
+    move-object v3, v1
+
+    invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setUpdateDownloaded(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$null$2(Ljava/lang/String;)V
+    .locals 4
+
+    .prologue
+    .line 94
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v1, p1
+
+    .local v1, "string":Ljava/lang/String;
+    move-object v2, v0
+
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity;->progressBar:Landroid/widget/ProgressBar;
+
+    move-object v3, v1
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setProgress(I)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$onCreate$0()V
+    .locals 4
+
+    .prologue
+    .line 63
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v1, v0
+
+    iget-object v1, v1, Lninja/vextil/UpdaterActivity;->buttonContainer:Landroid/widget/RelativeLayout;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 64
+    sget-object v1, Lcom/daimajia/androidanimations/library/Techniques;->SlideInUp:Lcom/daimajia/androidanimations/library/Techniques;
+
+    invoke-static {v1}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v1
 
-    .line 278
+    const-wide/16 v2, 0x1f4
+
+    invoke-virtual {v1, v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->duration(J)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
+
+    move-result-object v1
+
+    move-object v2, v0
+
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity;->buttonContainer:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v1, v2}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
+
+    move-result-object v1
+
+    .line 65
+    return-void
+.end method
+
+.method private synthetic lambda$setCheckingForUpdate$1()V
+    .locals 12
+
+    .prologue
+    .line 75
+    move-object v1, p0
+
+    .local v1, "this":Lninja/vextil/UpdaterActivity;
+    new-instance v3, Landroid/view/animation/RotateAnimation;
+
+    move-object v11, v3
+
+    move-object v3, v11
+
+    move-object v4, v11
+
+    const/4 v5, 0x0
+
+    const/high16 v6, 0x44b40000
+
+    const/4 v7, 0x1
+
+    const/high16 v8, 0x3f000000
+
+    const/4 v9, 0x1
+
+    const/high16 v10, 0x3f000000
+
+    invoke-direct/range {v4 .. v10}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
+
+    move-object v2, v3
+
+    .line 77
+    .local v2, "anim":Landroid/view/animation/Animation;
+    move-object v3, v2
+
+    new-instance v4, Landroid/view/animation/LinearInterpolator;
+
+    move-object v11, v4
+
+    move-object v4, v11
+
+    move-object v5, v11
+
+    invoke-direct {v5}, Landroid/view/animation/LinearInterpolator;-><init>()V
+
+    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    .line 78
+    move-object v3, v2
+
+    const-wide/16 v4, 0xfa0
+
+    invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    .line 79
+    move-object v3, v2
+
+    const/4 v4, -0x1
+
+    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setRepeatCount(I)V
+
+    .line 80
+    move-object v3, v2
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
+
+    .line 81
+    move-object v3, v2
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    .line 82
+    move-object v3, v1
+
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity;->iconRefresh:Landroid/widget/ImageView;
+
+    move-object v4, v2
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 83
+    return-void
+.end method
+
+.method private synthetic lambda$setDownloadingUpdate$3()V
+    .locals 6
+
+    .prologue
+    .line 91
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    new-instance v1, Lninja/vextil/Tasks/DownloadUpdateTask;
+
+    move-object v5, v1
+
+    move-object v1, v5
+
+    move-object v2, v5
+
+    invoke-direct {v2}, Lninja/vextil/Tasks/DownloadUpdateTask;-><init>()V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    move-object v5, v2
+
+    move-object v2, v5
+
+    move-object v3, v5
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "http://whatsapp.vexmd.info/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity;->subVersionCode:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "/latest.apk"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$10;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Lninja/vextil/Tasks/TaskCallback;
+
+    move-result-object v3
+
+    move-object v4, v0
+
+    invoke-static {v4}, Lninja/vextil/UpdaterActivity$$Lambda$11;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Lninja/vextil/Tasks/TaskCallback;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v2, v3, v4}, Lninja/vextil/Tasks/DownloadUpdateTask;->execute(Ljava/lang/String;Lninja/vextil/Tasks/TaskCallback;Lninja/vextil/Tasks/TaskCallback;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$setIconVisible$6()V
+    .locals 4
+
+    .prologue
+    .line 174
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v2, v0
+
+    invoke-virtual {v2}, Lninja/vextil/UpdaterActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    sget v3, Lninja/vextil/Resources;->pulseAnimation:I
+
+    invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v2
+
+    move-object v1, v2
+
+    .line 175
+    .local v1, "pulse":Landroid/view/animation/Animation;
+    move-object v2, v0
+
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity;->iconDownload:Landroid/widget/ImageView;
+
+    move-object v3, v1
+
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 176
+    return-void
+.end method
+
+.method private synthetic lambda$setNoNewUpdate$5(Landroid/view/View;)V
+    .locals 3
+
+    .prologue
+    .line 116
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v1, p1
+
+    .local v1, "v":Landroid/view/View;
+    move-object v2, v0
+
+    invoke-direct {v2}, Lninja/vextil/UpdaterActivity;->setCheckingForUpdate()V
+
+    return-void
+.end method
+
+.method private synthetic lambda$setUpdateDownloaded$4(Ljava/lang/String;Landroid/view/View;)V
+    .locals 9
+
+    .prologue
+    .line 104
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v1, p1
+
+    move-object v2, p2
+
+    .local v2, "v":Landroid/view/View;
+    new-instance v4, Landroid/content/Intent;
+
+    move-object v8, v4
+
+    move-object v4, v8
+
+    move-object v5, v8
+
+    invoke-direct {v5}, Landroid/content/Intent;-><init>()V
+
+    move-object v3, v4
+
+    .line 105
+    .local v3, "intent":Landroid/content/Intent;
+    move-object v4, v3
+
+    const-string v5, "android.intent.action.VIEW"
+
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 106
+    move-object v4, v3
+
+    new-instance v5, Ljava/io/File;
+
+    move-object v8, v5
+
+    move-object v5, v8
+
+    move-object v6, v8
+
+    move-object v7, v1
+
+    invoke-direct {v6, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v5}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
+
+    move-result-object v5
+
+    const-string v6, "application/vnd.android.package-archive"
+
+    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v4
+
+    .line 107
+    move-object v4, v0
+
+    move-object v5, v3
+
+    invoke-virtual {v4, v5}, Lninja/vextil/UpdaterActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 108
+    return-void
+.end method
+
+.method private runNewCheckForUpdateTask()V
+    .locals 6
+
+    .prologue
+    .line 221
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    new-instance v1, Lninja/vextil/Tasks/CheckForUpdateTask;
+
+    move-object v5, v1
+
+    move-object v1, v5
+
+    move-object v2, v5
+
+    invoke-direct {v2}, Lninja/vextil/Tasks/CheckForUpdateTask;-><init>()V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    move-object v5, v2
+
+    move-object v2, v5
+
+    move-object v3, v5
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "http://whatsapp.vexmd.info/shouldUpdate.php?version="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "&subVersion="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity;->subVersionCode:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
+
+    move-object v4, v0
+
+    invoke-static {v4}, Lninja/vextil/UpdaterActivity$$Lambda$9;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Lninja/vextil/Tasks/TaskCallback;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v2, v3, v4}, Lninja/vextil/Tasks/CheckForUpdateTask;->execute(Ljava/lang/String;Ljava/lang/String;Lninja/vextil/Tasks/TaskCallback;)V
+
+    .line 226
     return-void
 .end method
 
@@ -410,7 +741,7 @@
     .locals 7
 
     .prologue
-    .line 105
+    .line 72
     move-object v1, p0
 
     .local v1, "this":Lninja/vextil/UpdaterActivity;
@@ -422,14 +753,14 @@
 
     invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 
-    .line 106
+    .line 73
     move-object v2, v1
 
     const-string v3, "Checking for updates..."
 
     invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;)V
 
-    .line 107
+    .line 74
     new-instance v2, Landroid/os/Handler;
 
     move-object v6, v2
@@ -440,17 +771,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$3;
+    move-object v3, v1
 
-    move-object v6, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$3;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v6
-
-    move-object v4, v6
-
-    move-object v5, v1
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$3;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0xc8
 
@@ -458,7 +783,7 @@
 
     move-result v2
 
-    .line 120
+    .line 84
     new-instance v2, Landroid/os/Handler;
 
     move-object v6, v2
@@ -469,17 +794,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$4;
+    move-object v3, v1
 
-    move-object v6, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$4;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v6
-
-    move-object v4, v6
-
-    move-object v5, v1
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$4;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0x5dc
 
@@ -487,7 +806,7 @@
 
     move-result v2
 
-    .line 126
+    .line 85
     return-void
 .end method
 
@@ -495,7 +814,7 @@
     .locals 7
 
     .prologue
-    .line 130
+    .line 89
     move-object v1, p0
 
     .local v1, "this":Lninja/vextil/UpdaterActivity;
@@ -507,7 +826,7 @@
 
     invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 
-    .line 131
+    .line 90
     move-object v2, v1
 
     const-string v3, "New version found!"
@@ -516,7 +835,7 @@
 
     invoke-direct {v2, v3, v4}, Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 132
+    .line 91
     new-instance v2, Landroid/os/Handler;
 
     move-object v6, v2
@@ -527,17 +846,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$5;
+    move-object v3, v1
 
-    move-object v6, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$5;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v6
-
-    move-object v4, v6
-
-    move-object v5, v1
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$5;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0x258
 
@@ -545,7 +858,7 @@
 
     move-result v2
 
-    .line 138
+    .line 96
     return-void
 .end method
 
@@ -553,7 +866,7 @@
     .locals 8
 
     .prologue
-    .line 169
+    .line 121
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -566,7 +879,7 @@
 
     move-result-object v2
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$8;
+    new-instance v3, Lninja/vextil/UpdaterActivity$1;
 
     move-object v7, v3
 
@@ -576,7 +889,7 @@
 
     move-object v5, v0
 
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$8;-><init>(Lninja/vextil/UpdaterActivity;)V
+    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$1;-><init>(Lninja/vextil/UpdaterActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -586,19 +899,19 @@
 
     iget-object v3, v3, Lninja/vextil/UpdaterActivity;->iconRefresh:Landroid/widget/ImageView;
 
-    .line 177
+    .line 129
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
 
     move-result-object v2
 
-    .line 179
+    .line 131
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->FadeOut:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v2
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$9;
+    new-instance v3, Lninja/vextil/UpdaterActivity$2;
 
     move-object v7, v3
 
@@ -608,7 +921,7 @@
 
     move-object v5, v0
 
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$9;-><init>(Lninja/vextil/UpdaterActivity;)V
+    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$2;-><init>(Lninja/vextil/UpdaterActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -618,19 +931,19 @@
 
     iget-object v3, v3, Lninja/vextil/UpdaterActivity;->iconDone:Landroid/widget/ImageView;
 
-    .line 187
+    .line 139
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
 
     move-result-object v2
 
-    .line 189
+    .line 141
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->FadeOut:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v2
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$10;
+    new-instance v3, Lninja/vextil/UpdaterActivity$3;
 
     move-object v7, v3
 
@@ -640,7 +953,7 @@
 
     move-object v5, v0
 
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$10;-><init>(Lninja/vextil/UpdaterActivity;)V
+    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$3;-><init>(Lninja/vextil/UpdaterActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -650,19 +963,19 @@
 
     iget-object v3, v3, Lninja/vextil/UpdaterActivity;->iconDownload:Landroid/widget/ImageView;
 
-    .line 197
+    .line 149
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
 
     move-result-object v2
 
-    .line 199
+    .line 151
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->FadeOut:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v2
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$11;
+    new-instance v3, Lninja/vextil/UpdaterActivity$4;
 
     move-object v7, v3
 
@@ -672,7 +985,7 @@
 
     move-object v5, v0
 
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$11;-><init>(Lninja/vextil/UpdaterActivity;)V
+    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$4;-><init>(Lninja/vextil/UpdaterActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -682,26 +995,26 @@
 
     iget-object v3, v3, Lninja/vextil/UpdaterActivity;->iconLogo:Landroid/widget/ImageView;
 
-    .line 207
+    .line 159
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
 
     move-result-object v2
 
-    .line 209
+    .line 161
     move-object v2, v1
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 210
+    .line 162
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->BounceIn:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v2
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$12;
+    new-instance v3, Lninja/vextil/UpdaterActivity$5;
 
     move-object v7, v3
 
@@ -713,7 +1026,7 @@
 
     move-object v6, v1
 
-    invoke-direct {v4, v5, v6}, Lninja/vextil/UpdaterActivity$12;-><init>(Lninja/vextil/UpdaterActivity;Landroid/widget/ImageView;)V
+    invoke-direct {v4, v5, v6}, Lninja/vextil/UpdaterActivity$5;-><init>(Lninja/vextil/UpdaterActivity;Landroid/widget/ImageView;)V
 
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -721,12 +1034,12 @@
 
     move-object v3, v1
 
-    .line 218
+    .line 170
     invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
 
     move-result-object v2
 
-    .line 220
+    .line 172
     move-object v2, v1
 
     move-object v3, v0
@@ -735,7 +1048,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 221
+    .line 173
     new-instance v2, Landroid/os/Handler;
 
     move-object v7, v2
@@ -746,17 +1059,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$13;
+    move-object v3, v0
 
-    move-object v7, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$8;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v7
-
-    move-object v4, v7
-
-    move-object v5, v0
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$13;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0x258
 
@@ -764,7 +1071,7 @@
 
     move-result v2
 
-    .line 228
+    .line 177
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity;->progressBar:Landroid/widget/ProgressBar;
@@ -773,7 +1080,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 229
+    .line 178
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->SlideInUp:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
@@ -788,11 +1095,11 @@
 
     move-result-object v2
 
-    .line 233
+    .line 182
     :goto_0
     return-void
 
-    .line 231
+    .line 180
     :cond_0
     move-object v2, v0
 
@@ -806,10 +1113,10 @@
 .end method
 
 .method private setNoNewUpdate()V
-    .locals 6
+    .locals 4
 
     .prologue
-    .line 157
+    .line 113
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -821,7 +1128,7 @@
 
     invoke-direct {v1, v2}, Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 
-    .line 158
+    .line 114
     move-object v1, v0
 
     const-string v2, "No updates found."
@@ -830,7 +1137,7 @@
 
     invoke-direct {v1, v2, v3}, Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 159
+    .line 115
     move-object v1, v0
 
     iget-object v1, v1, Lninja/vextil/UpdaterActivity;->buttonRight:Landroid/widget/Button;
@@ -839,26 +1146,20 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 160
+    .line 116
     move-object v1, v0
 
     iget-object v1, v1, Lninja/vextil/UpdaterActivity;->buttonRight:Landroid/widget/Button;
 
-    new-instance v2, Lninja/vextil/UpdaterActivity$7;
+    move-object v2, v0
 
-    move-object v5, v2
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity$$Lambda$7;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Landroid/view/View$OnClickListener;
 
-    move-object v2, v5
-
-    move-object v3, v5
-
-    move-object v4, v0
-
-    invoke-direct {v3, v4}, Lninja/vextil/UpdaterActivity$7;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 165
+    .line 117
     return-void
 .end method
 
@@ -866,7 +1167,7 @@
     .locals 5
 
     .prologue
-    .line 237
+    .line 186
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -881,7 +1182,7 @@
 
     invoke-direct {v2, v3, v4}, Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 238
+    .line 187
     return-void
 .end method
 
@@ -889,7 +1190,7 @@
     .locals 9
 
     .prologue
-    .line 242
+    .line 191
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -905,7 +1206,7 @@
 
     move-result-object v3
 
-    new-instance v4, Lninja/vextil/UpdaterActivity$14;
+    new-instance v4, Lninja/vextil/UpdaterActivity$6;
 
     move-object v8, v4
 
@@ -917,7 +1218,7 @@
 
     move-object v7, v1
 
-    invoke-direct {v5, v6, v7}, Lninja/vextil/UpdaterActivity$14;-><init>(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    invoke-direct {v5, v6, v7}, Lninja/vextil/UpdaterActivity$6;-><init>(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
 
     invoke-virtual {v3, v4}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -925,7 +1226,7 @@
 
     const-wide/16 v4, 0x12c
 
-    .line 253
+    .line 202
     invoke-virtual {v3, v4, v5}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->duration(J)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v3
@@ -938,14 +1239,14 @@
 
     move-result-object v3
 
-    .line 255
+    .line 204
     sget-object v3, Lcom/daimajia/androidanimations/library/Techniques;->SlideOutRight:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v3}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v3
 
-    new-instance v4, Lninja/vextil/UpdaterActivity$15;
+    new-instance v4, Lninja/vextil/UpdaterActivity$7;
 
     move-object v8, v4
 
@@ -957,7 +1258,7 @@
 
     move-object v7, v2
 
-    invoke-direct {v5, v6, v7}, Lninja/vextil/UpdaterActivity$15;-><init>(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    invoke-direct {v5, v6, v7}, Lninja/vextil/UpdaterActivity$7;-><init>(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
 
     invoke-virtual {v3, v4}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->withListener(Lcom/nineoldandroids/animation/Animator$AnimatorListener;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
@@ -965,7 +1266,7 @@
 
     const-wide/16 v4, 0x12c
 
-    .line 266
+    .line 215
     invoke-virtual {v3, v4, v5}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->duration(J)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
     move-result-object v3
@@ -978,15 +1279,15 @@
 
     move-result-object v3
 
-    .line 268
+    .line 217
     return-void
 .end method
 
 .method private setUpdateDownloaded(Ljava/lang/String;)V
-    .locals 8
+    .locals 5
 
     .prologue
-    .line 142
+    .line 100
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -1001,7 +1302,7 @@
 
     invoke-direct {v2, v3}, Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 
-    .line 143
+    .line 101
     move-object v2, v0
 
     const-string v3, "Update downloaded!"
@@ -1010,7 +1311,7 @@
 
     invoke-direct {v2, v3, v4}, Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 144
+    .line 102
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity;->buttonRight:Landroid/widget/Button;
@@ -1019,28 +1320,22 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 145
+    .line 103
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity;->buttonRight:Landroid/widget/Button;
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$6;
+    move-object v3, v0
 
-    move-object v7, v3
+    move-object v4, v1
 
-    move-object v3, v7
+    invoke-static {v3, v4}, Lninja/vextil/UpdaterActivity$$Lambda$6;->lambdaFactory$(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)Landroid/view/View$OnClickListener;
 
-    move-object v4, v7
-
-    move-object v5, v0
-
-    move-object v6, v1
-
-    invoke-direct {v4, v5, v6}, Lninja/vextil/UpdaterActivity$6;-><init>(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 153
+    .line 109
     return-void
 .end method
 
@@ -1050,7 +1345,7 @@
     .locals 4
 
     .prologue
-    .line 282
+    .line 230
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -1067,16 +1362,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 283
+    .line 231
     move-object v2, v0
 
     invoke-direct {v2}, Lninja/vextil/UpdaterActivity;->setDownloadingUpdate()V
 
-    .line 287
+    .line 235
     :goto_0
     return-void
 
-    .line 285
+    .line 233
     :cond_0
     move-object v2, v0
 
@@ -1089,7 +1384,7 @@
     .locals 7
 
     .prologue
-    .line 68
+    .line 41
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -1102,19 +1397,53 @@
 
     invoke-super {v2, v3}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 69
+    .line 42
     move-object v2, v0
 
-    const v3, 0x7f0300bd
+    sget v3, Lninja/vextil/Resources;->updaterActivity:I
 
     invoke-virtual {v2, v3}, Lninja/vextil/UpdaterActivity;->setContentView(I)V
 
-    .line 71
+    .line 44
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030b
+    invoke-virtual {v3}, Lninja/vextil/UpdaterActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    sget v4, Lninja/vextil/Resources;->versionCode:I
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lninja/vextil/UpdaterActivity;->versionCode:Ljava/lang/String;
+
+    .line 45
+    move-object v2, v0
+
+    move-object v3, v0
+
+    invoke-virtual {v3}, Lninja/vextil/UpdaterActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    sget v4, Lninja/vextil/Resources;->subVersionCode:I
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lninja/vextil/UpdaterActivity;->subVersionCode:Ljava/lang/String;
+
+    .line 46
+    move-object v2, v0
+
+    move-object v3, v0
+
+    sget v4, Lninja/vextil/Resources;->textTop:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1124,12 +1453,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->textTop:Landroid/widget/TextView;
 
-    .line 72
+    .line 47
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030c
+    sget v4, Lninja/vextil/Resources;->textBottom:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1139,12 +1468,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->textBottom:Landroid/widget/TextView;
 
-    .line 73
+    .line 48
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030e
+    sget v4, Lninja/vextil/Resources;->buttonContainer:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1154,12 +1483,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->buttonContainer:Landroid/widget/RelativeLayout;
 
-    .line 74
+    .line 49
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b0307
+    sget v4, Lninja/vextil/Resources;->iconRefresh:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1169,12 +1498,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->iconRefresh:Landroid/widget/ImageView;
 
-    .line 75
+    .line 50
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b0309
+    sget v4, Lninja/vextil/Resources;->iconDone:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1184,12 +1513,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->iconDone:Landroid/widget/ImageView;
 
-    .line 76
+    .line 51
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b0308
+    sget v4, Lninja/vextil/Resources;->iconDownload:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1199,12 +1528,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->iconDownload:Landroid/widget/ImageView;
 
-    .line 77
+    .line 52
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030a
+    sget v4, Lninja/vextil/Resources;->iconLogo:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1214,12 +1543,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->iconLogo:Landroid/widget/ImageView;
 
-    .line 78
+    .line 53
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030d
+    sget v4, Lninja/vextil/Resources;->progressBar:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1229,12 +1558,12 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->progressBar:Landroid/widget/ProgressBar;
 
-    .line 79
+    .line 54
     move-object v2, v0
 
     move-object v3, v0
 
-    const v4, 0x7f0b030f
+    sget v4, Lninja/vextil/Resources;->buttonRight:I
 
     invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->findViewById(I)Landroid/view/View;
 
@@ -1244,7 +1573,7 @@
 
     iput-object v3, v2, Lninja/vextil/UpdaterActivity;->buttonRight:Landroid/widget/Button;
 
-    .line 81
+    .line 56
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity;->buttonContainer:Landroid/widget/RelativeLayout;
@@ -1253,7 +1582,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 83
+    .line 58
     move-object v2, v0
 
     invoke-virtual {v2}, Lninja/vextil/UpdaterActivity;->getActionBar()Landroid/app/ActionBar;
@@ -1262,7 +1591,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 84
+    .line 59
     move-object v2, v0
 
     invoke-virtual {v2}, Lninja/vextil/UpdaterActivity;->getActionBar()Landroid/app/ActionBar;
@@ -1273,7 +1602,7 @@
 
     invoke-virtual {v2, v3}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    .line 87
+    .line 62
     :cond_0
     new-instance v2, Landroid/os/Handler;
 
@@ -1285,17 +1614,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$1;
+    move-object v3, v0
 
-    move-object v6, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$1;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v6
-
-    move-object v4, v6
-
-    move-object v5, v0
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$1;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0xc8
 
@@ -1303,7 +1626,7 @@
 
     move-result v2
 
-    .line 95
+    .line 67
     new-instance v2, Landroid/os/Handler;
 
     move-object v6, v2
@@ -1314,17 +1637,11 @@
 
     invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    new-instance v3, Lninja/vextil/UpdaterActivity$2;
+    move-object v3, v0
 
-    move-object v6, v3
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity$$Lambda$2;->lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
 
-    move-object v3, v6
-
-    move-object v4, v6
-
-    move-object v5, v0
-
-    invoke-direct {v4, v5}, Lninja/vextil/UpdaterActivity$2;-><init>(Lninja/vextil/UpdaterActivity;)V
+    move-result-object v3
 
     const-wide/16 v4, 0x258
 
@@ -1332,7 +1649,7 @@
 
     move-result v2
 
-    .line 101
+    .line 68
     return-void
 .end method
 
@@ -1340,7 +1657,7 @@
     .locals 4
 
     .prologue
-    .line 389
+    .line 246
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -1355,7 +1672,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 394
+    .line 251
     move-object v2, v0
 
     move-object v3, v1
@@ -1370,21 +1687,21 @@
     :goto_0
     return v0
 
-    .line 391
+    .line 248
     .restart local v0    # "this":Lninja/vextil/UpdaterActivity;
     :pswitch_0
     move-object v2, v0
 
     invoke-virtual {v2}, Lninja/vextil/UpdaterActivity;->finish()V
 
-    .line 392
+    .line 249
     const/4 v2, 0x1
 
     move v0, v2
 
     goto :goto_0
 
-    .line 389
+    .line 246
     nop
 
     :pswitch_data_0
@@ -1397,7 +1714,7 @@
     .locals 9
 
     .prologue
-    .line 382
+    .line 239
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity;
@@ -1412,7 +1729,7 @@
 
     move-object v2, v4
 
-    .line 383
+    .line 240
     .local v2, "uri":Landroid/net/Uri;
     new-instance v4, Landroid/content/Intent;
 
@@ -1430,7 +1747,7 @@
 
     move-object v3, v4
 
-    .line 384
+    .line 241
     .local v3, "intent":Landroid/content/Intent;
     move-object v4, v0
 
@@ -1438,6 +1755,6 @@
 
     invoke-virtual {v4, v5}, Lninja/vextil/UpdaterActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 385
+    .line 242
     return-void
 .end method

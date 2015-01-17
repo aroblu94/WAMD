@@ -3,12 +3,12 @@
 .source "UpdaterActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->onCreate(Landroid/os/Bundle;)V
+    value = Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 4
 
     .prologue
-    .line 87
+    .line 121
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$1;
@@ -48,51 +48,56 @@
 
 
 # virtual methods
-.method public run()V
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 127
+    return-void
+.end method
+
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
     .locals 4
 
     .prologue
-    .line 90
+    .line 125
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$1;
-    move-object v1, v0
+    move-object v1, p1
 
-    iget-object v1, v1, Lninja/vextil/UpdaterActivity$1;->this$0:Lninja/vextil/UpdaterActivity;
-
-    invoke-static {v1}, Lninja/vextil/UpdaterActivity;->access$000(Lninja/vextil/UpdaterActivity;)Landroid/widget/RelativeLayout;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 91
-    sget-object v1, Lcom/daimajia/androidanimations/library/Techniques;->SlideInUp:Lcom/daimajia/androidanimations/library/Techniques;
-
-    invoke-static {v1}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v1, v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->duration(J)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
-
-    move-result-object v1
-
+    .local v1, "animation":Lcom/nineoldandroids/animation/Animator;
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity$1;->this$0:Lninja/vextil/UpdaterActivity;
 
-    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$000(Lninja/vextil/UpdaterActivity;)Landroid/widget/RelativeLayout;
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$000(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
+    const/16 v3, 0x8
 
-    move-result-object v1
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 92
+    .line 126
+    return-void
+.end method
+
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 128
+    return-void
+.end method
+
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 122
     return-void
 .end method

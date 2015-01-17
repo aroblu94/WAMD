@@ -3,12 +3,12 @@
 .source "UpdaterActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->setCheckingForUpdate()V
+    value = Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 4
 
     .prologue
-    .line 120
+    .line 151
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$4;
@@ -48,20 +48,56 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 123
+    .line 157
+    return-void
+.end method
+
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 4
+
+    .prologue
+    .line 155
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$4;
-    move-object v1, v0
+    move-object v1, p1
 
-    iget-object v1, v1, Lninja/vextil/UpdaterActivity$4;->this$0:Lninja/vextil/UpdaterActivity;
+    .local v1, "animation":Lcom/nineoldandroids/animation/Animator;
+    move-object v2, v0
 
-    invoke-static {v1}, Lninja/vextil/UpdaterActivity;->access$300(Lninja/vextil/UpdaterActivity;)V
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$4;->this$0:Lninja/vextil/UpdaterActivity;
 
-    .line 124
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$300(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
+
+    move-result-object v2
+
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 156
+    return-void
+.end method
+
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 158
+    return-void
+.end method
+
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 152
     return-void
 .end method

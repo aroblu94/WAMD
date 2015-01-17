@@ -3,12 +3,12 @@
 .source "UpdaterActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->setCheckingForUpdate()V
+    value = Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 4
 
     .prologue
-    .line 107
+    .line 141
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$3;
@@ -48,95 +48,56 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 12
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 110
-    move-object v1, p0
+    .line 147
+    return-void
+.end method
 
-    .local v1, "this":Lninja/vextil/UpdaterActivity$3;
-    new-instance v3, Landroid/view/animation/RotateAnimation;
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 4
 
-    move-object v11, v3
+    .prologue
+    .line 145
+    move-object v0, p0
 
-    move-object v3, v11
+    .local v0, "this":Lninja/vextil/UpdaterActivity$3;
+    move-object v1, p1
 
-    move-object v4, v11
+    .local v1, "animation":Lcom/nineoldandroids/animation/Animator;
+    move-object v2, v0
 
-    const/4 v5, 0x0
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$3;->this$0:Lninja/vextil/UpdaterActivity;
 
-    const/high16 v6, 0x44b40000
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$200(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
 
-    const/4 v7, 0x1
+    move-result-object v2
 
-    const/high16 v8, 0x3f000000
+    const/16 v3, 0x8
 
-    const/4 v9, 0x1
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const/high16 v10, 0x3f000000
+    .line 146
+    return-void
+.end method
 
-    invoke-direct/range {v4 .. v10}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
-    move-object v2, v3
+    .prologue
+    .line 148
+    return-void
+.end method
 
-    .line 112
-    .local v2, "anim":Landroid/view/animation/Animation;
-    move-object v3, v2
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
-    new-instance v4, Landroid/view/animation/LinearInterpolator;
-
-    move-object v11, v4
-
-    move-object v4, v11
-
-    move-object v5, v11
-
-    invoke-direct {v5}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
-
-    .line 113
-    move-object v3, v2
-
-    const-wide/16 v4, 0xfa0
-
-    invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
-
-    .line 114
-    move-object v3, v2
-
-    const/4 v4, -0x1
-
-    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setRepeatCount(I)V
-
-    .line 115
-    move-object v3, v2
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
-
-    .line 116
-    move-object v3, v2
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v3, v4}, Landroid/view/animation/Animation;->setFillAfter(Z)V
-
-    .line 117
-    move-object v3, v1
-
-    iget-object v3, v3, Lninja/vextil/UpdaterActivity$3;->this$0:Lninja/vextil/UpdaterActivity;
-
-    invoke-static {v3}, Lninja/vextil/UpdaterActivity;->access$200(Lninja/vextil/UpdaterActivity;)Landroid/widget/ImageView;
-
-    move-result-object v3
-
-    move-object v4, v2
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
-
-    .line 118
+    .prologue
+    .line 142
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "UpdaterActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->setDownloadingUpdate()V
+    value = Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,78 +20,90 @@
 # instance fields
 .field final synthetic this$0:Lninja/vextil/UpdaterActivity;
 
+.field final synthetic val$view:Landroid/widget/ImageView;
+
 
 # direct methods
-.method constructor <init>(Lninja/vextil/UpdaterActivity;)V
-    .locals 4
+.method constructor <init>(Lninja/vextil/UpdaterActivity;Landroid/widget/ImageView;)V
+    .locals 5
 
     .prologue
-    .line 132
+    .line 162
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$5;
     move-object v1, p1
 
     .local v1, "this$0":Lninja/vextil/UpdaterActivity;
-    move-object v2, v0
+    move-object v2, p2
 
-    move-object v3, v1
+    move-object v3, v0
 
-    iput-object v3, v2, Lninja/vextil/UpdaterActivity$5;->this$0:Lninja/vextil/UpdaterActivity;
+    move-object v4, v1
 
-    move-object v2, v0
+    iput-object v4, v3, Lninja/vextil/UpdaterActivity$5;->this$0:Lninja/vextil/UpdaterActivity;
 
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    move-object v3, v0
+
+    move-object v4, v2
+
+    iput-object v4, v3, Lninja/vextil/UpdaterActivity$5;->val$view:Landroid/widget/ImageView;
+
+    move-object v3, v0
+
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 7
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 135
+    .line 168
+    return-void
+.end method
+
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 4
+
+    .prologue
+    .line 166
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$5;
-    new-instance v1, Lninja/vextil/UpdaterActivity$DownloadUpdateTask;
+    move-object v1, p1
 
-    move-object v6, v1
+    .local v1, "animation":Lcom/nineoldandroids/animation/Animator;
+    move-object v2, v0
 
-    move-object v1, v6
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$5;->val$view:Landroid/widget/ImageView;
 
-    move-object v2, v6
+    const/4 v3, 0x0
 
-    move-object v3, v0
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v3, v3, Lninja/vextil/UpdaterActivity$5;->this$0:Lninja/vextil/UpdaterActivity;
+    .line 167
+    return-void
+.end method
 
-    const/4 v4, 0x0
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
-    invoke-direct {v2, v3, v4}, Lninja/vextil/UpdaterActivity$DownloadUpdateTask;-><init>(Lninja/vextil/UpdaterActivity;Lninja/vextil/UpdaterActivity$1;)V
+    .prologue
+    .line 169
+    return-void
+.end method
 
-    const/4 v2, 0x1
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
-    new-array v2, v2, [Ljava/lang/String;
-
-    move-object v6, v2
-
-    move-object v2, v6
-
-    move-object v3, v6
-
-    const/4 v4, 0x0
-
-    const-string v5, "http://whatsapp.vexmd.info/S/latest.apk"
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2}, Lninja/vextil/UpdaterActivity$DownloadUpdateTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    move-result-object v1
-
-    .line 136
+    .prologue
+    .line 163
     return-void
 .end method

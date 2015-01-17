@@ -3,12 +3,12 @@
 .source "UpdaterActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/nineoldandroids/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->setUpdateDownloaded(Ljava/lang/String;)V
+    value = Lninja/vextil/UpdaterActivity;->setText(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lninja/vextil/UpdaterActivity;
 
-.field final synthetic val$path:Ljava/lang/String;
+.field final synthetic val$textTopS:Ljava/lang/String;
 
 
 # direct methods
@@ -28,7 +28,7 @@
     .locals 5
 
     .prologue
-    .line 145
+    .line 191
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$6;
@@ -47,7 +47,7 @@
 
     move-object v4, v2
 
-    iput-object v4, v3, Lninja/vextil/UpdaterActivity$6;->val$path:Ljava/lang/String;
+    iput-object v4, v3, Lninja/vextil/UpdaterActivity$6;->val$textTopS:Ljava/lang/String;
 
     move-object v3, v0
 
@@ -58,75 +58,103 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 8
+.method public onAnimationCancel(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 147
+    .line 200
+    return-void
+.end method
+
+.method public onAnimationEnd(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 4
+
+    .prologue
+    .line 195
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$6;
     move-object v1, p1
 
-    .local v1, "v":Landroid/view/View;
-    new-instance v3, Landroid/content/Intent;
+    .local v1, "animation":Lcom/nineoldandroids/animation/Animator;
+    move-object v2, v0
 
-    move-object v7, v3
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$6;->this$0:Lninja/vextil/UpdaterActivity;
 
-    move-object v3, v7
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$400(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
 
-    move-object v4, v7
+    move-result-object v2
 
-    invoke-direct {v4}, Landroid/content/Intent;-><init>()V
+    const/16 v3, 0x8
 
-    move-object v2, v3
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 148
-    .local v2, "intent":Landroid/content/Intent;
-    move-object v3, v2
+    .line 196
+    move-object v2, v0
 
-    const-string v4, "android.intent.action.VIEW"
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$6;->this$0:Lninja/vextil/UpdaterActivity;
 
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$400(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
 
-    move-result-object v3
+    move-result-object v2
 
-    .line 149
-    move-object v3, v2
+    move-object v3, v0
 
-    new-instance v4, Ljava/io/File;
+    iget-object v3, v3, Lninja/vextil/UpdaterActivity$6;->val$textTopS:Ljava/lang/String;
 
-    move-object v7, v4
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-object v4, v7
+    .line 197
+    move-object v2, v0
 
-    move-object v5, v7
+    iget-object v2, v2, Lninja/vextil/UpdaterActivity$6;->this$0:Lninja/vextil/UpdaterActivity;
 
-    move-object v6, v0
+    invoke-static {v2}, Lninja/vextil/UpdaterActivity;->access$400(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
 
-    iget-object v6, v6, Lninja/vextil/UpdaterActivity$6;->val$path:Ljava/lang/String;
+    move-result-object v2
 
-    invoke-direct {v5, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    invoke-static {v4}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    move-result-object v4
+    .line 198
+    sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->SlideInLeft:Lcom/daimajia/androidanimations/library/Techniques;
 
-    const-string v5, "application/vnd.android.package-archive"
+    invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
 
-    invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+    move-result-object v2
 
-    move-result-object v3
-
-    .line 150
     move-object v3, v0
 
     iget-object v3, v3, Lninja/vextil/UpdaterActivity$6;->this$0:Lninja/vextil/UpdaterActivity;
 
-    move-object v4, v2
+    invoke-static {v3}, Lninja/vextil/UpdaterActivity;->access$400(Lninja/vextil/UpdaterActivity;)Landroid/widget/TextView;
 
-    invoke-virtual {v3, v4}, Lninja/vextil/UpdaterActivity;->startActivity(Landroid/content/Intent;)V
+    move-result-object v3
 
-    .line 151
+    invoke-virtual {v2, v3}, Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;->playOn(Landroid/view/View;)Lcom/daimajia/androidanimations/library/YoYo$YoYoString;
+
+    move-result-object v2
+
+    .line 199
+    return-void
+.end method
+
+.method public onAnimationRepeat(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 201
+    return-void
+.end method
+
+.method public onAnimationStart(Lcom/nineoldandroids/animation/Animator;)V
+    .locals 0
+    .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
+
+    .prologue
+    .line 192
     return-void
 .end method
