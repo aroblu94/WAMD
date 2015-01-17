@@ -1,0 +1,123 @@
+<?xml version="1.0"
+encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical"
+    android:background="#ff3a7b5a"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="8dp">
+        <RelativeLayout android:id="@id/vextil_updater_main_container"
+            android:layout_width="247dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+            <ImageView android:id="@id/vextil_updater_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="260.0dip"
+                android:src="@drawable/vextil_updater_phone_land"
+                android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/vextil_updater_icon_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85.0dip"
+                android:layout_centerHorizontal="true">
+                <ImageView android:id="@id/vextil_updater_icon_background"
+                    android:layout_width="100.0dip"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/vextil_updater_icon_outer"
+                    />
+                <ImageView android:id="@id/vextil_updater_icon_refresh"
+                    android:layout_width="100.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:src="@drawable/vextil_updater_refresh_icon_inner"
+                    />
+                <ImageView android:id="@id/vextil_updater_icon_download"
+                    android:layout_width="100.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:src="@drawable/vextil_updater_download_icon_inner"
+                    />
+                <ImageView android:id="@id/vextil_updater_icon_done"
+                    android:layout_width="100.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:src="@drawable/vextil_updater_done_icon_inner"
+                    />
+            </RelativeLayout>
+            <ImageView android:id="@id/vextil_updater_icon_logo"
+                android:paddingTop="85.0dip"
+                android:layout_width="100.0dip"
+                android:layout_height="wrap_content"
+                android:src="@drawable/vextil_updater_logo_icon"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout        
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+               <TextView android:textSize="18.0sp"
+                android:textColor="@android:color/white"
+                android:id="@id/vextil_updater_text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="30.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                />
+            <TextView android:textSize="18.0sp"
+                android:textColor="@android:color/white"
+                android:id="@id/vextil_updater_text_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="30.0dip"
+                android:layout_marginTop="40.0dip"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                />
+            <ProgressBar android:id="@id/vextil_updater_progress"
+                android:layout_width="150.0dip"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vextil_updater_text_bottom"
+                android:layout_centerHorizontal="true"
+                style="?android:attr/progressBarStyleHorizontal"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:orientation="horizontal"
+        android:id="@id/vextil_button_container"
+        android:background="#ffffffff"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button android:textColor="#ff3a7b5a"
+            android:background="@android:color/transparent"
+            android:paddingLeft="20.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Changelogs"
+            android:layout_alignParentLeft="true"
+            android:onClick="viewChangelogs"
+            />
+        <Button android:textColor="#ff3a7b5a"
+            android:id="@id/vextil_button_right"
+            android:background="@android:color/transparent"
+            android:paddingRight="20.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>
