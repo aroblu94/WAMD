@@ -49,6 +49,8 @@
     <color name="primary">#214545</color>
     <color name="primary_dark">#1d3838</color>
     <color name="primary_accent">#4db6ac</color>
+	<color name="primary_accent_bottom_mic">#45a39a</color>
+	<color name="primary_accent_top_mic">#82cbc4</color>
     <color name="primary_accent_light">#5ad1c6</color>
     <color name="red">#ff8b0000</color>
     <color name="row_1">#fff6f6f6</color>
