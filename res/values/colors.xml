@@ -35,8 +35,8 @@
     <color name="description_gray">#ff333333</color>
     <color name="divider_gray">#ffc0c4c0</color>
     <color name="divider_row_lower">#ffcdcdcd</color>
-    <color name="emoji_popup_body">#ff363636</color>
-    <color name="emoji_popup_header">#ff2b2b2b</color>
+    <color name="emoji_popup_body">#ffeceff1</color>
+    <color name="emoji_popup_header">#ffe4e7e9</color>
     <color name="full_screen_footer">#ff596169</color>
     <color name="gallery_cell">#ff333333</color>
     <color name="gray_activity">#ffeeeeee</color>

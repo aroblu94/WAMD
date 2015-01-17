@@ -124,7 +124,7 @@ encoding="utf-8"?>
                     android:layout_alignParentBottom="true"
                     />
             </RelativeLayout>
-            <FrameLayout android:background="#ff363636"
+            <FrameLayout android:background="#ffECEFF1"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent">
                 <ImageView android:id="@id/delete_symbol"
