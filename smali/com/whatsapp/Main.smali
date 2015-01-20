@@ -1210,6 +1210,13 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 6
 
+    move-object v0, p0
+
+    .local v0, "this":Lninja/vextil/UpdaterActivity;
+    move-object v1, v0
+
+    invoke-static {v1}, Lninja/vextil/UpdaterNotification;->run(Landroid/app/Activity;)V
+
     .prologue
     const/4 v5, 0x0
 
