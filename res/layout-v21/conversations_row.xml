@@ -18,6 +18,18 @@ encoding="utf-8"?>
             whatsapp:tbtnRadius="@dimen/small_avatar_radius"
             whatsapp:tbtnForegroundOnly="true"
             />
+        <TextView android:textSize="15sp" 
+            android:textStyle="bold" 
+            android:textColor="@android:color/white" 
+            android:gravity="center" 
+            android:layout_gravity="center_vertical" 
+            android:id="@id/conversations_row_message_count" 
+            android:background="@drawable/vextil_unread_overlay" 
+            android:padding="0.0dip" 
+            android:layout_width="@dimen/small_avatar_size" 
+            android:layout_height="@dimen/small_avatar_size" 
+            android:layout_marginRight="0.0dip" 
+            />
     </FrameLayout>
     <ImageView android:layout_alignParentLeft="true"
         android:layout_gravity="center_vertical"
@@ -156,19 +168,6 @@ encoding="utf-8"?>
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4.0dip"
                 style="?android:attr/progressBarStyleSmallInverse"
-                />
-            <TextView android:textSize="10.5sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:gravity="center"
-                android:layout_gravity="center_vertical"
-                android:id="@id/conversations_row_message_count"
-                android:background="@drawable/new_messages_indicator"
-                android:padding="0.0dip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="4.0dip"
-                android:minWidth="16.0dip"
                 />
         </LinearLayout>
     </LinearLayout>
