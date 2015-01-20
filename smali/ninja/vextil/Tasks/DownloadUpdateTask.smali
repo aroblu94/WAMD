@@ -99,7 +99,7 @@
 
     move-result-object v16
 
-    const-string v17, "/Update.apk"
+    const-string v17, "/WhatsApp/Update.apk"
 
     invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -491,7 +491,7 @@
 .end method
 
 .method public execute(Ljava/lang/String;Lninja/vextil/Tasks/TaskCallback;Lninja/vextil/Tasks/TaskCallback;)V
-    .locals 10
+    .locals 11
 
     .prologue
     .line 21
@@ -500,7 +500,7 @@
     .local v0, "this":Lninja/vextil/Tasks/DownloadUpdateTask;
     move-object v1, p1
 
-    .local v1, "url":Ljava/lang/String;
+    .local v1, "subVersion":Ljava/lang/String;
     move-object v2, p2
 
     .local v2, "executeCallback":Lninja/vextil/Tasks/TaskCallback;
@@ -527,15 +527,45 @@
 
     new-array v5, v5, [Ljava/lang/String;
 
-    move-object v9, v5
+    move-object v10, v5
 
-    move-object v5, v9
+    move-object v5, v10
 
-    move-object v6, v9
+    move-object v6, v10
 
     const/4 v7, 0x0
 
-    move-object v8, v1
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    move-object v10, v8
+
+    move-object v8, v10
+
+    move-object v9, v10
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "http://whatsapp.vexmd.info/"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    move-object v9, v1
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "/latest.apk"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
 
     aput-object v8, v6, v7
 

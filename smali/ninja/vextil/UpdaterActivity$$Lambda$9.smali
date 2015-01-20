@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lninja/vextil/Tasks/TaskCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -30,7 +30,7 @@
     return-void
 .end method
 
-.method private static get$Lambda(Lninja/vextil/UpdaterActivity;)Lninja/vextil/Tasks/TaskCallback;
+.method private static get$Lambda(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
     .locals 5
 
     move-object v0, p0
@@ -52,7 +52,7 @@
     return-object v0
 .end method
 
-.method public static lambdaFactory$(Lninja/vextil/UpdaterActivity;)Lninja/vextil/Tasks/TaskCallback;
+.method public static lambdaFactory$(Lninja/vextil/UpdaterActivity;)Ljava/lang/Runnable;
     .locals 5
 
     move-object v0, p0
@@ -76,20 +76,16 @@
 
 
 # virtual methods
-.method public run(Ljava/lang/String;)V
-    .locals 4
+.method public run()V
+    .locals 2
 
     move-object v0, p0
 
-    move-object v1, p1
+    move-object v1, v0
 
-    move-object v2, v0
+    iget-object v1, v1, Lninja/vextil/UpdaterActivity$$Lambda$9;->arg$1:Lninja/vextil/UpdaterActivity;
 
-    iget-object v2, v2, Lninja/vextil/UpdaterActivity$$Lambda$9;->arg$1:Lninja/vextil/UpdaterActivity;
-
-    move-object v3, v1
-
-    invoke-static {v2, v3}, Lninja/vextil/UpdaterActivity;->access$lambda$8(Lninja/vextil/UpdaterActivity;Ljava/lang/String;)V
+    invoke-static {v1}, Lninja/vextil/UpdaterActivity;->access$lambda$8(Lninja/vextil/UpdaterActivity;)V
 
     return-void
 .end method

@@ -28,7 +28,7 @@
     .locals 5
 
     .prologue
-    .line 204
+    .line 256
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$7;
@@ -63,7 +63,7 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 213
+    .line 265
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .locals 4
 
     .prologue
-    .line 208
+    .line 260
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$7;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 209
+    .line 261
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity$7;->this$0:Lninja/vextil/UpdaterActivity;
@@ -105,7 +105,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 210
+    .line 262
     move-object v2, v0
 
     iget-object v2, v2, Lninja/vextil/UpdaterActivity$7;->this$0:Lninja/vextil/UpdaterActivity;
@@ -118,7 +118,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 211
+    .line 263
     sget-object v2, Lcom/daimajia/androidanimations/library/Techniques;->SlideInLeft:Lcom/daimajia/androidanimations/library/Techniques;
 
     invoke-static {v2}, Lcom/daimajia/androidanimations/library/YoYo;->with(Lcom/daimajia/androidanimations/library/Techniques;)Lcom/daimajia/androidanimations/library/YoYo$AnimationComposer;
@@ -137,7 +137,7 @@
 
     move-result-object v2
 
-    .line 212
+    .line 264
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 214
+    .line 266
     return-void
 .end method
 
@@ -155,6 +155,6 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 205
+    .line 257
     return-void
 .end method

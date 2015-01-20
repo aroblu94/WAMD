@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lninja/vextil/UpdaterActivity;->setIconVisible(Landroid/widget/ImageView;)V
+    value = Lninja/vextil/UpdaterActivity;->setVisibleIcon(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 4
 
     .prologue
-    .line 121
+    .line 173
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$1;
@@ -53,7 +53,7 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 127
+    .line 179
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .locals 4
 
     .prologue
-    .line 125
+    .line 177
     move-object v0, p0
 
     .local v0, "this":Lninja/vextil/UpdaterActivity$1;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 126
+    .line 178
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 128
+    .line 180
     return-void
 .end method
 
@@ -98,6 +98,6 @@
     .param p1, "animation"    # Lcom/nineoldandroids/animation/Animator;
 
     .prologue
-    .line 122
+    .line 174
     return-void
 .end method
