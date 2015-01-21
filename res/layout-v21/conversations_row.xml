@@ -21,6 +21,15 @@ encoding="utf-8"?>
     </FrameLayout>
     <ImageView android:layout_alignParentLeft="true"
         android:layout_gravity="center_vertical"
+        android:layout_width="17.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="51.0dip"
+        android:layout_marginTop="47.0dip"
+        android:scaleType="fitStart"
+        android:src="@drawable/vextil_status_typing"
+        />
+    <ImageView android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
         android:id="@id/status_indicator"
         android:layout_width="17.0dip"
         android:layout_height="wrap_content"
