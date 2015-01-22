@@ -2,3 +2,4 @@ WAMD.sublime-workspace
 WAMD.sublime-project
 build/
 dist/
+*.db
