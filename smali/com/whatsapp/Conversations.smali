@@ -1782,6 +1782,23 @@
     .line 257
     :cond_0
 
+    const v0, 0x7f0e0248
+
+    invoke-interface {p1, v1, v1, v1, v0}, Lcom/actionbarsherlock/view/Menu;->add(IIII)Lcom/actionbarsherlock/view/MenuItem;
+
+    move-result-object v0
+
+    const v5, 0x7f020500
+
+    invoke-interface {v0, v5}, Lcom/actionbarsherlock/view/MenuItem;->setIcon(I)Lcom/actionbarsherlock/view/MenuItem;
+
+    move-result-object v0
+
+    const/16 v5, 0x6e
+
+    .line 114
+    invoke-interface {v0, v5}, Lcom/actionbarsherlock/view/MenuItem;->setAlphabeticShortcut(C)Lcom/actionbarsherlock/view/MenuItem;
+
     .line 251
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2141,7 +2158,7 @@
     :pswitch_1
     new-instance v0, Landroid/content/Intent;
 
-    const-class v1, Lcom/whatsapp/ContactPicker;
+    const-class v1, Lcom/whatsapp/qrcode/QrCodeActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
