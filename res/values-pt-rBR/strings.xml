@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="vextil_menuitem_updater">Atualizador</string>
     <string name="account_expired_alert">O serviço WhatsApp para %1$s expirou em %2$s. Comprar serviço?</string>
     <string name="account_info_account_num">Seu Número</string>
     <string name="account_info_check_eligibility">Verificando elegibilidade...</string>
@@ -228,7 +229,7 @@ Se você possui um novo número e um novo telefone, você deve, primeiro, altera
     <string name="conversation_download_audio">Baixar áudio</string>
     <string name="conversation_is_composing">escrevendo...</string>
     <string name="conversation_is_recording">gravando áudio...</string>
-    <string name="conversation_last_seen">visto por último</string>
+    <string name="conversation_last_seen">visto</string>
     <string name="conversation_menu_forward">Encaminhar</string>
     <string name="conversation_name_is_composing">%s está digitando...</string>
     <string name="conversation_name_is_recording">%s está gravando áudio...</string>
